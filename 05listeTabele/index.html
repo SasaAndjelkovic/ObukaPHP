@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste i tabele</title>
+</head>
+<body>
+    <!-- NEUREDJENE LISTE -->
+    <h1>LISTE</h1>
+    <h2>Neuredjene liste</h2>
+    <ul>
+       <li>Prva stavka</li>
+        <!-- CTRL + ALT + strelica na dole  -->
+        <!-- ALT + click -->
+       <li>Druga stavka</li>
+       <li>Treca stavka</li>
+       <li>Cetvrta stavka</li>
+    </ul>
+    <!-- UREDJENE LISTE -->
+    <h2>Uredjenje liste</h2>
+    <ol>
+        <li>Prva stavka</li>
+        <li>Druga stavka</li>
+        <li>Treca stavka</li>
+    </ol>
+    <!-- UMETNUTE LISTE -->
+    <h2>Umetnute liste</h2>
+    <ul>
+        <li>Prva stavka</li>
+        <ul>    
+            <li>Druga stavka</li>
+            <li>Treca stavka</li>
+        </ul>
+        <li>Cetvrta stavka</li>
+    </ul>
+
+    <ol>
+        <li>Prva stavka</li>
+        <ol>
+            <li>Druga stavka</li>
+            <li>Treca stavka</li>
+        </ol>
+        <li>Cetvrta stavka</li>
+    </ol>
+
+    <ol>
+        <li>Prva stavka</li>
+        <li>Druga stavka</li>
+        <ul>
+            <li>Treca stavka</li>
+            <li>Cetvrta stavka</li>
+        </ul>
+        <li>Peta stavka</li>
+    </ol>
+    <hr>
+
+    <h1>TABELE</h1>
+    <table border="1">
+
+        <tr>
+            <td>Red 1 Kolona 1</td>
+            <td>Red 1 Kolona 2</td>
+            <td>Red 1 Kolona 3</td>
+        </tr>
+        <tr>
+            <td>Red 2 Kolona 1</td>
+            <td>Red 2 Kolona 2</td>
+            <td>Red 2 Kolona 3</td>
+        </tr>
+        <tr>
+            <td>Red 3 Kolona 1</td>
+            <td>Red 3 Kolona 2</td>
+            <td>Red 3 Kolona 3</td>
+        </tr>  
+    </table>
+
+    <br><br><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Odsek</th>
+                <th>Prosecna ocena</th>
+                <th>Broj studenata</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Informaciona sistemi i tehnologije</td>
+                <td>7.56</td>
+                <td>302</td>
+             </tr>
+        </tbody>
+    </table>
+
+    <br><br><br>
+
+    <table border="1" cellpadding="5" cellspacing="5">
+
+        <tr>
+            <td>Red 1 Kolona 1</td>
+            <!-- colspan, rowspan -->
+            <td colspan="2" align="center">Red 1 Kolona 2</td>
+        </tr>
+        <tr>
+            <td rowspan="2" valign="top">Red 2 Kolona 1</td>
+            <td>Red 2 Kolona 2</td>
+            <td>Red 2 Kolona 3</td>
+        </tr>
+        <tr>
+            <!-- <td>Red 3 Kolona 1</td> -->
+            <td>Red 3 Kolona 2</td>
+            <td>Red 3 Kolona 3</td>
+        </tr>  
+    </table>
+</body>
+</html>
