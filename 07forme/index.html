@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML FORME</h1>
+    <form> <!-- action="posalji.php" method="get"-->
+
+        <label for="ime">Ime:</label>
+        <!-- <p>Ime</p> -->
+        <input 
+            type="text"   
+            size="50"    
+            maxlength="5" 
+            placeholder="Milica"
+            name="imeKorisnika"
+            required
+            id="ime"
+        />  <!-- difoltna vrednost size: 20 -->
+            <!-- value="Max 5 karaktera" -->
+            <br><br>
+        
+        <!-- <p>Sifra</p> -->
+        <label for="sifra">Ime:</label>
+        <input 
+            type="password" 
+            name="sifraKorisnika" 
+            id="sifra" 
+            size="10" 
+            maxlength="7"
+        />
+        
+        <p>Pica:</p>
+        <input type="radio" name="pica" id="" value="pica1">Vesuvio<br>
+        <input type="radio" name="pica" id="" value="pica2" checked>Capricciosa<br>
+        <input type="radio" name="pica" id="" value="pica3">Margarita<br>
+            <!-- ako name stavim neku drugu vrednost, onda moze da se cekira vise elemenata odjednom -->
+
+        <p>Prilozi:</p>
+        <input type="checkbox" name="prilog1" id="" value="k" >Kecap<br>
+        <input type="checkbox" name="prilog2" id="" value="m">Majonez<br>
+        <input type="checkbox" name="prilog3" id="" value="o">Origano<br><br>
+
+        <label for="pice1">
+            <img src="img/line_soda_coca_cola_icon_189440.png" 
+            alt="Coca Cola" 
+            width="30" 
+            height="50">
+        </label>
+
+        <input type="radio" name="pice" id="pice1">
+
+        <label for="pice2">
+            <img src="img/line_soda_fanta_icon_189444.png" 
+            alt="Fanta"
+            width="30" 
+            height="50">
+        </label>
+
+        <input type="radio" name="pice" id="pice2">
+
+        <p>Vasi komentari:</p>
+        <textarea 
+            name="komentari1" 
+            id="" 
+            cols="30"   
+            rows="10" 
+            placeholder="Ovde je potrebno ostaviti komentare...">
+        </textarea><br> <!--difoltno 20 2-->
+        <!-- readonly -->
+
+        <p>Sva jela u ponudi:</p>
+        <select name="meni1" id="">
+            <option value="plj">Pljeskavica</option>
+            <option value="s" selected>Sendvic</option>
+            <option value="pa">Palacinka</option>
+        </select>
+        <br>
+        <br>
+
+        <select name="meni2" id="">
+            <optgroup label="Slano">
+                <option value="plj">Pljeskavica</option>
+                <option value="s" selected>Sendvic</option>
+            </optgroup>
+            <optgroup label="Slatko" disabled>
+                <option value="pa">Palacinka</option>
+            </optgroup>
+        </select>
+
+
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" name="" id="email"><br><br>
+
+        <label for="boja">Boja:</label>
+        <input type="color" name="" id="boja"><br><br>
+
+        <label for="datum">Datum:</label>
+        <input type="date" name="" id="datum"><br><br>
+
+        <label for="datumIvreme"></label>
+        <input type="datetime-local" name="" id="datumIvreme"><br><br>
+
+        <label for="nedelja">Nedelja:</label>
+        <input type="week" name="" id="nedelja"><br><br>
+
+        <label for="mesec">Mesec:</label>
+        <input type="month" name="" id="mesec"><br><br>
+
+        <label for="vreme">Vreme:</label>
+        <input type="time" name="" id="vreme"><br><br>
+
+        <label for="fajl">Fajl:</label>
+        <input type="file" name="" id="fajl"><br><br>
+
+        <label for="slika">Slika:</label>
+        <input 
+            type="image" 
+            src="img/file_type_html_icon_130541.png" 
+            alt="HTML"
+            id="slika">
+        <br><br>
+
+        <label for="opseg">Opseg:</label>
+        <input type="range" name="" id="opseg"><br><br>
+
+        <label for="broj">Broj:</label>
+        <input type="number" name="" id="broj"><br><br>
+        
+        <input type="submit" value="Submit!">
+        <input type="reset" value="Reset!">
+
+    </form>
+
+    <!-- i za jedan input napravi form -->
+    <br><input type="text">
+    
+</body>
+</html>
