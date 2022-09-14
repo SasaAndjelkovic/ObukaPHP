@@ -1,0 +1,40 @@
+input {
+    width: 200px;
+}
+
+#prijava input{
+    height: 20px;
+    background-color: beige;
+}
+
+#registracija input {
+    height: 10px;
+    width: 150px;
+    background-color: rgb(100, 149, 237);
+}
+
+body {
+    /* viewport height */
+    height: 100vh;
+    /* viewport width */
+    width: 100vw;
+}
+
+#box {
+    background-color: blueviolet;
+    margin: 0;
+    padding: 5px 10px 15px 20px;
+    border: 0;
+    border-left: black 2px solid;
+    width: 200px;
+    height: 10%;
+}
+
+#box p {
+    color: black;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    padding-left: 10px;
+    border: 3px dotted yellow;
+}

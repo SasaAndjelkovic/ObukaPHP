@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin-top: 10vh;
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid lightgray;
+    border-bottom: 0;
+    border-radius: 5%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 50vw;
+    margin-left: 25vw;
+    text-align: center;
+}
+
+header img {
+    width: 100px;
+    vertical-align: middle;
+}
+
+#wrap {
+    border: 1px solid lightgray;
+    border-bottom: 0;
+    border-radius: 5%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 50vw;
+    height: 20vw;
+    margin-left: 25vw;
+}
+
+#prijava, #info {
+    float: left;
+    width: 45%;
+    margin: 10px;
+}
+
+#prijava input[type="text"], #prijava button {
+    width: 80%;
+    margin-top: 20px;
+    height: 20px;
+    border-radius: 5%;
+    border: 1px solid lightgray;
+}
+
+#prijava button {
+    border: 0;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: bold;
+}
+
