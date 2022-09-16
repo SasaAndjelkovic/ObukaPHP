@@ -1,0 +1,19 @@
+p {
+    background-color: aquamarine;
+    padding: 10px;
+    border: 2px dashed blue;
+}
+
+a {
+    padding: 10px;
+    border: 2px solid brown;
+    background-color: violet;
+}
+
+ul {
+    background-color: wheat;
+}
+
+input {
+    background-color: yellowgreen;
+}
