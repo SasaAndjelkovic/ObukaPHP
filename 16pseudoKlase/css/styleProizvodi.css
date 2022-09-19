@@ -36,4 +36,8 @@
         grid-template-columns: auto;
         grid-template-rows: repeat(9, 300px);
     }
+
+    .velikiParagraf {
+        display: none;
+    }
 }
