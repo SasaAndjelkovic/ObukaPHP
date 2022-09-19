@@ -1,0 +1,19 @@
+.menu-item:nth-child(3) {
+    font-weight: bold;
+}
+
+form {
+    padding: 1em;
+}
+
+form div {
+    padding: 1em 0;
+}
+
+input[type="text"]:focus {
+    background-color: yellow;
+}
+
+input[type="email"]:valid {
+    background-color: rgb(17, 255, 0);
+}
