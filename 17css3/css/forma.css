@@ -1,0 +1,19 @@
+form {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+input {
+    position: fixed;
+    left: 150px;
+}
+
+input:focus {
+    background-color: green;
+}
