@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style1.css">
+    <title>Cokoladice</title>
+</head>
+<body>
+    <header>
+        <h1 id="naslov">Cokoladice</h1>
+    </header>
+
+    <section id="prviDeo">
+        <div id="tipovi">
+            <h2 class="podnaslov">Tipovi cokoladica i ukusi</h2>
+            <ul>
+                <li><strong>Mlecna cokolada</strong></li>
+                <ul>
+                    <li>Jagoda</li>
+                    <li>Lesnik</li>
+                    <li>Keks</li>
+                </ul>
+                <br>
+                <li><strong>Crna cokolada</strong></li>
+                <ul>
+                    <li>Malina</li>
+                    <li>Chili</li>
+                    <li>Menta</li>
+                </ul>
+                <br>
+                <li><strong>Bela cokolada</strong></li>
+                <ul>
+                    <li>Vanila</li>
+                    <li>Keks</li>
+                </ul>
+            </ul>
+        </div>
+    </section>
+
+    <section id="drugiDeo">
+        <div id="tabela">
+            <h2 class="podnaslov">Galerija</h2>
+            <table>
+                <tr>
+                    <td>Mlecna</td>
+                    <td>Crna</td>
+                    <td>Bela</td>
+                </tr>
+                <tr>
+                   <td><img src="./img/mlecna.png" alt="Mlecna" height="75px" width="100px"></td>
+                   <td><img src="./img/crna.png" alt="Crna" height="75px" width="100px"></td>
+                   <td><img src="./img/bela.png" alt="Bela" height="75px" width="100px"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="treciDeo">
+        <div id="forma">
+            <h2 class="podnaslov">Ocenite lizalice</h2>
+            <p id="misljenje">Vase misljenje nam znaci</p>
+            <form>
+                <label for="imePrezime">Ime i prezime:</label>
+                <input type="text" id="imePrezime">
+                <br>
+                <label for="tipCokolade">Tip cokolade:</label>
+                <select id="tipCokolade">
+                    <option value="default" selected="selected" disabled>Izaberite tip cokolade</option>
+                    <optgroup label="Mlecna cokolada">
+                        <option value="jagoda">Jagoda</option>
+                        <option value="lesnik">Lesnik</option>
+                        <option value="keks">Keks</option>
+                    </optgroup>
+                    <optgroup label="Crna cokolada">
+                        <option value="malina">Malina</option>
+                        <option value="chili">Chili</option>
+                        <option value="menta">Menta</option>
+                    </optgroup><optgroup label="Bela cokolada">
+                        <option value="vanila">Vanila</option>
+                        <option value="keks">Keks</option>
+                    </optgroup>
+                </select>
+                <br>
+                <label for="ocena">Ocena:</label>
+                <br>
+                <input id="jedan" type="radio" name="ocena" value="jedan"/> 
+                <label for="jedan">1</label>
+                <br/>
+                <input id="dva" type="radio" name="ocena" value="dva"/> 
+                <label for="dva">2</label>
+                <br/>
+                <input id="tri" type="radio" name="ocena" value="tri"/> 
+                <label for="tri">3</label>
+                <br/>
+                <input id="cetiri" type="radio" name="ocena" value="cetiri"/> 
+                <label for="cetiri">4</label>
+                <br/>
+                <input id="pet" type="radio" name="ocena" value="pet"/> 
+                <label for="pet">5</label>
+                <br>
+                <label for="komentar">Komentar:</label>
+                <textarea name="komentar" id="komentar" cols="30" rows="1"></textarea>
+                <br>
+                <br>
+                <input class="dugme" type="submit" value="Posalji">
+                <input class="dugme" type="reset" value="Obrisi">
+            </form>
+        </div>
+    </section>
+
+    
+</body>
+</html>
