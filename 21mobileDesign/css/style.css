@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header-div {
+    width: 100%;
+    background-color: rgba(197, 22, 22, 0.584);
+    height: 10vh;
+}
+
+.header-div ul {
+    text-decoration: none;
+}
