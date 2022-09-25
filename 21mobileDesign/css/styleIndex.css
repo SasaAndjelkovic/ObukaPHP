@@ -1,0 +1,3 @@
+.burger-menu-item:first-child, .menu-item:first-child {
+    font-weight: bold;
+}

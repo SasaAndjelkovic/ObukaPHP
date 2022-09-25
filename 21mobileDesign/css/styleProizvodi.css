@@ -1,0 +1,39 @@
+.burger-menu-item:nth-child(2), .menu-item:nth-child(2) {
+    font-weight: bold;
+}
+
+.sviProizvodi .proizvod:nth-child(odd) {
+    background-color: rgb(154, 154, 204);
+}
+
+.sviProizvodi .proizvod:nth-child(even) {
+    background-color: rgb(228, 230, 210);
+}
+
+.sviProizvodi {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(9, 300px);
+    margin: 2em;
+    gap: 5%;
+    justify-content: space-around;
+}
+
+.proizvod {
+    text-align: center;
+    padding: 1em;
+}
+
+@media (751px <= width <= 1100px)  {
+    .sviProizvodi {
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(5, 300px);
+    }
+}
+
+@media (width > 1100px) {
+    .sviProizvodi {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: repeat(3, 300px);
+    }
+}

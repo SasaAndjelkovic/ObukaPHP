@@ -1,0 +1,13 @@
+.burger-menu-item:nth-child(3), .menu-item:nth-child(3) {
+    font-weight: bold;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+input {
+    margin: 4px 12px;
+}
+

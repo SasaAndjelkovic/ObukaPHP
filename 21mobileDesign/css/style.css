@@ -12,11 +12,11 @@
     display: none;
 }
 
-.header-div ul {
+ul {
     list-style-type: none;
 }
 
-.header-div ul a {
+ul a {
     text-decoration: none;
     color: black;
 }
@@ -30,14 +30,24 @@
 }
 
 .burger-menu {
-    display: flex;
-    flex-direction: column;
+    display: none;
+}
+
+.burger:hover > .burger-menu {
+    display: block;
+}
+
+.burger-menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.251);
 }
 
 @media (width > 750px) {
     .header-div .menu {
         display: flex;
         justify-content: center;
+    }
+    .menu-item:hover {
+        background-color: rgba(0, 0, 0, 0.251);
     }
     .burger {
         display: none;
