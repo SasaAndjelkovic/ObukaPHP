@@ -6,9 +6,43 @@
 .header-div {
     width: 100%;
     background-color: rgba(197, 22, 22, 0.584);
-    height: 10vh;
+}
+
+.header-div .menu {
+    display: none;
 }
 
 .header-div ul {
+    list-style-type: none;
+}
+
+.header-div ul a {
     text-decoration: none;
+    color: black;
+}
+
+.menu-item {
+    padding: 1em;
+}
+
+.burger {
+    display: block;
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (width > 750px) {
+    .header-div .menu {
+        display: flex;
+        justify-content: center;
+    }
+    .burger {
+        display: none;
+    }
+    .burger-menu {
+        display: none;
+    }
 }
