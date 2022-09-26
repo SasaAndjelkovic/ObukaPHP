@@ -44,7 +44,7 @@ let adresa = forma["adresa"];
 console.log(adresa);
 
 let roditelj = document.querySelector("body");
-let prvoDete = roditelj.firstElementChild("h2");
+let prvoDete = roditelj.firstElementChild;
 console.log(prvoDete);
 
 //1. zadatak
