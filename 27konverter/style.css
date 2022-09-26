@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+}
+
+form{
+    width: 200px;
+    margin: auto; 
+}
+
+form input{
+    margin-bottom: 10px;
+}
+
+button{
+    margin: 15px 0;
+}

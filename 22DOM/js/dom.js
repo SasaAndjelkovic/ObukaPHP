@@ -65,7 +65,7 @@ console.log(posalji);
 posalji.addEventListener("focusout", upisiUNaslov);
 //posalji.addEventListener("input", upisiUNaslov);
 
- function upisiUNaslov () {
+function upisiUNaslov () {
     let ispis = posalji.value;
     console.log(ispis);
     naslovi[1].textContent = "Lorem, ipsum " + ispis;

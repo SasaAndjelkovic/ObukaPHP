@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Simple Calculator using HTML, CSS and JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Kalkulator</h1>
+    <table class="calculator">
+      <tr>
+        <td colspan="3">
+          <input class="display-box" type="text" id="rezultat" disabled />
+        </td>
+
+        <td>
+          <input type="button" value="C" onclick="obrisi()" id="btn" />
+        </td>
+      </tr>
+      <tr>
+        <td><input type="button" value="1" onclick="unesi('1')" /></td>
+        <td><input type="button" value="2" onclick="unesi('2')" /></td>
+        <td><input type="button" value="3" onclick="unesi('3')" /></td>
+        <td><input type="button" value="/" onclick="unesi('/')" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="4" onclick="unesi('4')" /></td>
+        <td><input type="button" value="5" onclick="unesi('5')" /></td>
+        <td><input type="button" value="6" onclick="unesi('6')" /></td>
+        <td><input type="button" value="-" onclick="unesi('-')" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="7" onclick="unesi('7')" /></td>
+        <td><input type="button" value="8" onclick="unesi('8')" /></td>
+        <td><input type="button" value="9" onclick="unesi('9')" /></td>
+        <td><input type="button" value="+" onclick="unesi('+')" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="." onclick="unesi('.')" /></td>
+        <td><input type="button" value="0" onclick="unesi('0')" /></td>
+
+        <td>
+          <input type="button" value="=" onclick="izracunaj()" id="btn" />
+        </td>
+        <td><input type="button" value="*" onclick="unesi('*')" /></td>
+      </tr>
+    </table>
+
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>

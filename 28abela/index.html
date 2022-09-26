@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="naslov">Generisi tabelu</h1>
+    <div class="container">
+      <form id="forma-tabela">
+        <label for="red">Red</label>
+        <input type="text" id="red" /><br />
+        <label for="kolona">Kolona</label>
+        <input type="text" id="kolona" /><br />
+        <button type="submit">Generiši tabelu</button><br />
+      </form>
+    </div>
+    <div id="tabela">
+      <table>
+        <thead>
+          <th>Ime</th>
+          <th>Prezime</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="niz.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
