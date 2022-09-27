@@ -14,7 +14,7 @@ dugme.addEventListener("click", function(event) {
     console.log(korisnik, lozinka);
     if (korisnik == "" || lozinka == "") {
         alert("Korisnicko ime ili Lozinka je prazna.");
-    } else if (korisnik.length < 6 || lozinka < 6) {
+    } else if (korisnik.length < 6 || lozinka.length < 6) {
         alert("Uneli ste kratko Korisnicko ime ili Lozinku");
     } else { 
         alert("Dobrodosli, " + korisnik);
