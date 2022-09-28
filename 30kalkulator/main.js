@@ -4,7 +4,6 @@ let operacija = "";
 
 function unesi (param) {     
     operacija += param;     
-    console.log(operacija); 
     elementRezultat.value = operacija;
 };
 
