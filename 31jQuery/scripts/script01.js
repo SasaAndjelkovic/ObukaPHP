@@ -38,14 +38,14 @@ $(".dugme").on("click", function(){}); //jquery on(). bind() je stariji koncept
 
 
 
-/* $(".polje").on("focus blur", function (e) {
-    console.log(e);
-    if (e.type == "focus") {
-        $(this).css({border: "3px solid blue"});
-    } else {
-        $(this).css({border: "1px solid grey"});
-    }
-}); */
+//  $(".polje").on("focus blur", function (e) {
+//     console.log(e);
+//     if (e.type == "focus") {
+//         $(this).css({border: "3px solid blue"});
+//     } else {
+//         $(this).css({border: "1px solid grey"});
+//     }
+// });
 
 //GET metode
 //innerHTML, textContent
