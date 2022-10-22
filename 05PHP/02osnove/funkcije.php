@@ -10,6 +10,7 @@ function prebroj($niz)
 };
 
 $niz_brojeva = [1, 2, 3, 4, 5];
+echo "<br>"; // ako ne stavim ovu liniju, tada je sve ovo: <pre>5</pre>
 echo prebroj($niz_brojeva) . "<br>";
 
 function is_empty($niz)
