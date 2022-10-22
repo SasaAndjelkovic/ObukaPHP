@@ -14,10 +14,10 @@ echo ucwords($bend) . "<br>";
 //strlen
 $recenica = "Reprezentacija na Srbije ide na evropsko prvenstvu u fudbalu!";
 $brojKaraktera = strlen($recenica);
-echo "Recenica: '$recenica '  ima: $brojKaraktera karaktera<br>";  //broji prazan
+echo "Recenica: '$recenica ' ima: $brojKaraktera karaktera<br>";  //broji prazan
 
 //strpos
-echo "Pozicija: " . strpos($recenica, "Srbije") . "<br>";
+echo "Pozicija: " . strpos($recenica, "na") . "<br>";
 echo "Pozicija: " . strpos($recenica, "na", 18) . "<br>";
 
 //str_replace
