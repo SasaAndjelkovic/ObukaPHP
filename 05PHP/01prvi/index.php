@@ -53,11 +53,12 @@ function test()
     $broj1 = $broj1 + $broj2;
 
     $broj2 = $broj2 + 5;
-    echo "<br>" . $broj2;  //vrednost lokalne promenljive se ne pamti nako zavrsetka funkcije (resetuje se)
+    echo "<br> Broj2 je: " . $broj2 . "<br>";  //vrednost lokalne promenljive se ne pamti nakon zavrsetka funkcije (resetuje se)
+    echo "<br> Broj1 je: " . $broj1 . "<br>";
 }
 
-test();  // 12 + 23 = 25
-//test() ako pozovemo dva puta, dobicemo 25 + 23 = 48
+test();  // broj1 12 + 23 = 35
+test();  //ako pozovemo dva puta, dobicemo 35 + 23 = 58
 echo $broj1;
 echo "<br>";
 echo $broj2; //ovo je lokalna promenljiva, nije definisana van funkcije
@@ -113,4 +114,4 @@ $niz = ["Jelena", "Dusan", "Ivana", 7];
 echo $niz[1] . "<br>";
 
 $niz2 = ["ime" => "Jelena", "prezime" => "Saric"];  //nema potrebe da imamo dva kljuca ime, ime
-echo $niz["ime"] . "<br>";
+echo $niz2["ime"] . "<br>";
