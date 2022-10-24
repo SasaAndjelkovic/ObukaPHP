@@ -184,3 +184,62 @@ print_r($student_assoc1);
 $osobe["studenti"]["druga_godina"][] = $student_assoc;
 echo "<pre>" . print_r($osobe["studenti"]["druga_godina"], true) . "</pre>";
 echo "<hr>";
+
+//operacije nad skupovima
+//razlike skupova
+$niz1 = array("a" => "crvena", "b" => "zelena", "c" => "plava");
+$niz2 = array("a" => "crvena", "b" => "zelena", "c" => "plava", "d" => "zuta");
+print_r(array_diff($niz2, $niz1)); //uporedjuje po vrednostima
+echo "<br>";
+print_r(array_diff_assoc($niz2, $niz1)); //uporedjuje po kljucevima i vrednostima
+echo "<br>";
+print_r(array_diff_key($niz2, $niz1)); //uporedjuje po kljucevima
+echo "<br>";
+
+//zamena mesta kljuc=>vrednost === vrednost=>kljuc
+print_r(array_flip($niz1));
+echo "<br>";
+print_r($osoba);
+echo "<br>";
+$osoba["posao"] = $osoba[0];
+print_r($osoba);
+echo "<br>";
+unset($osoba[0]);
+// ksort($osoba);
+print_r($osoba);
+echo "<br>";
+
+//presek skupova
+print_r(array_intersect($niz2, $niz1)); // vrednostima
+echo "<br>";
+print_r(array_intersect_assoc($niz2, $niz1));  //kljucevi i vrednosti
+echo "<br>";
+print_r(array_intersect_key($niz2, $niz1)); // kljucevi i vrednosti
+echo "<br>";
+
+//merge
+print_r(array_merge($niz1, $niz2));
+echo "<hr>";
+
+//vratim kljuceve
+print_r(array_keys($osobe["studenti"]["druga_godina"][0]));
+echo "<br>";
+//vratim vrednosti
+print_r(array_values($osobe["studenti"]["druga_godina"][0]));
+echo "<br>";
+
+function kvadrati($x)
+{
+    return ($x * $x);
+}
+$niz_kvadrata = [];
+for ($i = 1; $i < 10; $i++) {
+    $niz_kvadrata[] = kvadrati($i);
+}
+print_r($niz_kvadrata);
+
+//proveri jos jednom
+$a = range(1, 10, 2);
+print_r(array_map("kvadrati", $a));
+
+echo sizeof($niz_kvadrata) == count($niz_kvadrata);
