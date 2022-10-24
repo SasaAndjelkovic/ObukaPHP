@@ -42,15 +42,18 @@ echo "Da li postoji: " . in_array("tamara", $osoba, true) . "<br>"; // true je z
 
 //dodavanje na niz
 $rez = array_push($niz_brojeva, "Tamara");
-print_r($niz_brojeva) . "<br>";
+print_r($niz_brojeva);
+echo "<br>";
 echo $rez . "<br>";
 $rez_a = array_push($osoba, "FON");
 print_r($osoba);
+echo "<br>";
 
 //sklanjanje sa niza
 $poslednji_broj = array_pop($niz_brojeva);
 echo $poslednji_broj . "<br>";
-print_r($niz_brojeva) . "<br>";
+print_r($niz_brojeva);
+echo "<br>";
 
 unset($niz_brojeva[2]);
 print_r($niz_brojeva) . "<br>";
@@ -85,7 +88,7 @@ $osobe = array(
             array(
                 "ime" => "Tamara",
                 "prezime" => "Naumovic",
-                "indeks" => 5001,
+                "indeks" => 5005,
                 "godina" => 2018
             ),
             array(
@@ -98,11 +101,15 @@ $osobe = array(
         "druga_godina" => array(
             array(
                 "ime" => "Petar",
-                "prezime" => "Lukovac"
+                "prezime" => "Lukovac",
+                "indeks" => 5001,
+                "godina" => 2019
             ),
             array(
                 "ime" => "Aleksa",
-                "prezime" => "Miletic"
+                "prezime" => "Miletic",
+                "indeks" => 5013,
+                "godina" => 2019
             )
         )
     ),
@@ -130,12 +137,14 @@ $osobe = array(
     )
 );
 echo "<hr>";
-// print_r($osobe["studenti"]["prva_godina"][1]);
+print_r($osobe["studenti"]["prva_godina"][1]);
+echo "<br><br>";
 
 foreach ($osobe["studenti"]["prva_godina"] as $student) {
     echo "ime" . $student["ime"] . "<br>";
     echo "prezime: " . $student["prezime"] . "<br>";
 }
+echo "<br>";
 
 foreach ($osobe["studenti"]["prva_godina"] as $student) {
     foreach ($student as $key => $val) {
@@ -147,27 +156,31 @@ echo "<hr>";
 $niz_indeksa = [];
 foreach ($osobe["studenti"]["druga_godina"] as $student) {
     echo $student["indeks"] . "<br>";
-    $niz_brojeva[] = $student["indeks"];
+    $niz_indeksa[] = $student["indeks"];
 }
 
 print_r($niz_indeksa);
 
+echo "<hr>";
 //ugradjena funckcija za vracanje pod_nizova iz nekog assoc niza
 $niz_indeksa_u = array_column($osobe["studenti"]["druga_godina"], "indeks");
 print_r(($niz_indeksa_u));
+echo "<br>";
 $niz_indeksa_u = array_column($osobe["studenti"]["druga_godina"], "prezime", "indeks");
 print_r(($niz_indeksa_u));
-$niz_kljuceva = ["ime"];
-$novi_student = ["Petar"];
+echo "<br>";
+$niz_kljuceva = ["ime", "prezime", "indeks", "godina"];
+$novi_student = ["Petar", "Petrovic", 5022, 2018];
 $student_assoc = array();
-for($i = 0; $i < count($niz_kljuceva); $++) {
+for ($i = 0; $i < count($niz_kljuceva); $i++) {
     $student_assoc[$niz_kljuceva[$i]] = $novi_student[$i];
 }
 echo "<hr>";
 print_r($student_assoc);
-$novi_student = ["Nikola"];
-$student_assoc1;
+echo "<br>";
+$novi_student1 = ["Nikola", "Novakovic", 5025, 2018];
 $student_assoc1 = array_combine($niz_kljuceva, $novi_student1);
 print_r($student_assoc1);
-$osobe["studenti"];
-print("<pre>".print_r())
+$osobe["studenti"]["druga_godina"][] = $student_assoc;
+echo "<pre>" . print_r($osobe["studenti"]["druga_godina"], true) . "</pre>";
+echo "<hr>";
