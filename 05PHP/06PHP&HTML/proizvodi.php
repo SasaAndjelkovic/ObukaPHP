@@ -1,7 +1,7 @@
 <?php
 
 include "podaci.php";
-// include "funkcije.php";
+include "funkcije.php";
 
 ?>
 
