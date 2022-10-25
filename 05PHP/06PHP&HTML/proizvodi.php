@@ -30,7 +30,7 @@ include "podaci.php";
         </thead>
         <tbody>
             <?php
-            foreach ($prozvodi as $pr) :
+            foreach ($proizvodi as $pr) :
             ?>
                 <tr>
                     <td><?php echo $pr["naziv"] ?></td>

@@ -1,6 +1,6 @@
 <?php
 
-$prozvodi = array(
+$proizvodi = array(
     array(
         "id" => 1,
         "naziv" => "Laptop",
@@ -66,7 +66,7 @@ function vratiUkupno()
     global $proizvodi;
     $suma = 0; //neutralna vrednost
     foreach ($proizvodi as $pr) {
-        $suma += vratiIznos($pr["cena"], $pr["kolicina"]);
+        $suma += vratiIznos($pr['cena'], $pr['kolicina']);
     }
     return $suma;
 }
