@@ -178,13 +178,15 @@
         $rows = count($ma);
         $cols = count($ma[0]);
         for ($i = 0; $i < $rows; $i++) {
-            for ($j = 0; $j < $cols; $j++)
-                echo ($ma[$i][$j] + $mb[$i][$j]) . " ";
+            for ($j = 0; $j < $cols; $j++) {
+                $mc[$i][$j] = 0;
+                $mc[$i][$j] = $ma[$i][$j] + $mb[$i][$j];
+            }
+            // echo ($ma[$i][$j] + $mb[$i][$j]) . " ";
         }
+        return $mc;
         echo "<br>";
     }
-
-
 
     echo "***Deveti zadatak***<br>";
     echo "Suma dve matrice: <br>";
@@ -195,13 +197,14 @@
     {
         $rows = count($m);
         $cols = count($m[0]);
-        $suma = 0;
+        $sum = 0;
         for ($i = 0; $i < $rows; $i++) {
-            for ($j = 0; $j < $cols; $j++)
-                if ($j == $i)
-                    $suma += $m[$i][$j];
+            for ($j = 0; $j < $cols; $j++) {
+                if ($i == $j)
+                    $sum += $m[$i][$j];
+            }
         }
-        return $suma;
+        return $sum;
     }
 
     echo "***Deseti zadatak***<br>";
@@ -222,7 +225,8 @@
     //12. Napisati funkciju koja će izdvojiti naziv fajla iz putanje 
     function extractFilename($path)
     {
-        return 0;
+        $slashIndex = strrpos($path, "/");
+        return substr($path, $slashIndex + 1);
     }
     $path = "C:/xampp/htdocs/UNDP/vezbanje.php";
     echo "***Dvanaesti zadatak***<br>";
@@ -249,7 +253,43 @@
     // 14. Na prazna mesta u rečenici upisati odgovarajuće reči. Voditi računa da dužina reči odgovara dužini crtica.
     function fillTheSentence($sentence, $words)
     {
-        return 0;
+        $i = 0;
+        $startingUnderlineIndex = strpos($sentence, '_');
+        while ($i < strlen($sentence)) {
+            $nuberOfLindes = countConsecutively($sentence, $startingUnderlineIndex);
+            $word = findTheWordBasedOnCharacters($words, $nuberOfLindes);
+            $sentence = replaceUnderlinesWithString($sentence, $word, $startingUnderlineIndex, $startingUnderlineIndex + $nuberOfLindes);
+            $startingUnderlineIndex = strpos($sentence, '_', $startingUnderlineIndex + $nuberOfLindes);
+            $i = $startingUnderlineIndex;
+            if ($i == false)
+                return $sentence;
+        }
+    }
+
+    function replaceUnderlinesWithString($sentence, $word, $start, $end)
+    {
+        $j = 0;
+        for ($i = $start; $i < $end; $i++) {
+            $sentence[$i] = $word[$j++];
+        }
+        return $sentence;
+    }
+
+    function findTheWordBasedOnCharacters($words, $numberOfCharacters)
+    {
+        foreach ($words as $word) {
+            if (strlen($word) == $numberOfCharacters)
+                return $word;
+        }
+    }
+
+    function countConsecutively($sentence, $startingIndex)
+    {
+        $count = 0;
+        for ($i = $startingIndex; $i < strlen($sentence); $i++) {
+            if ($sentence[$i] == "_") $count++;
+            else return $count;
+        }
     }
 
 
