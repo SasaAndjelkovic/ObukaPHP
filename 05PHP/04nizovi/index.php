@@ -226,7 +226,7 @@ print_r(array_keys($osobe["studenti"]["druga_godina"][0]));
 echo "<br>";
 //vratim vrednosti
 print_r(array_values($osobe["studenti"]["druga_godina"][0]));
-echo "<br>";
+echo "<hr>";
 
 function kvadrati($x)
 {
@@ -237,6 +237,7 @@ for ($i = 1; $i < 10; $i++) {
     $niz_kvadrata[] = kvadrati($i);
 }
 print_r($niz_kvadrata);
+echo "<br>";
 
 //proveri jos jednom
 $a = range(1, 10, 2);
