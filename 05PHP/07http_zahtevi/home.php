@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    Dobrodosli na svoj mail.
 
     <?php
     if (isset($_POST["register"])) :
@@ -19,15 +18,14 @@
             Uspesna registracija <br>
             <b>Vase ime je: </b> <?php echo $_POST["ime"] ?> <br>
             <b>Vase prezime je: </b> <?php echo $_POST["prezime"] ?> <br>
-            <b>Vase email je: </b> <?php echo $_POST["email"] ?> <br>
+            <b>Vas email je: </b> <?php echo $_POST["email"] ?> <br>
         </p>
 
-    <?php elseif (isset($_POST["register"])) : ?>
+    <?php elseif (isset($_GET["login"])) : ?>
         <p>Dobrodosli, <?php echo $_GET["username"]; ?> - na svoj email </p>
-
-
         ?>
     <?php endif; ?>
+
     <a href="index.php">Home link</a>
 </body>
 
