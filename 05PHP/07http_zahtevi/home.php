@@ -11,9 +11,7 @@
 <body>
 
     <?php
-    if (isset($_POST["register"])) :
-
-    ?>
+    if (isset($_POST["register"])) : ?>
         <p>
             Uspesna registracija <br>
             <b>Vase ime je: </b> <?php echo $_POST["ime"] ?> <br>
@@ -22,8 +20,9 @@
         </p>
 
     <?php elseif (isset($_GET["login"])) : ?>
-        <p>Dobrodosli, <?php echo $_GET["username"]; ?> - na svoj email </p>
-        ?>
+        <p>Dobrodosli - <?php echo $_GET["username"]; ?> - na svoj email </p>
+    <?php else : ?>
+        <p>Nesto ne radi</p>
     <?php endif; ?>
 
     <a href="index.php">Home link</a>

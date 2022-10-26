@@ -13,11 +13,14 @@
         <!-- POST method -->
         Welcome <?php echo $_POST["name"]; ?> <br>
         Registred email address: <?php echo $_POST["email"]; ?> <br>
-        <?php print_r($_POST); ?>
+        <?php // print_r($_POST); 
+        ?>
 
-        <!-- GET method -->
-        <!-- Welcome <?php echo $_GET["name"]; ?> <br>
-        Registred email address: <?php echo $_GET["email"]; ?> -->
+        <!-- GET method 
+        <?php // echo $_GET["name"]; 
+        ?> <br>
+        Registred email address: <?php // echo $_GET["email"]; 
+                                    ?> -->
     </p>
 </body>
 

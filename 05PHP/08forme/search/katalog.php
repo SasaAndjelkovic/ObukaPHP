@@ -22,16 +22,14 @@
         </thead>
         <tbody>
             <?php
-            foreach ($niz_proizvoda as $pr) :
+            foreach ($search_niz as $pr) :
             ?>
                 <tr>
-                    <td><? php ?></td>
-                    <td>Laptop</td>
-                    <td>1500</td>
+                    <td><?php echo $pr['id'] ?></td>
+                    <td><?php echo $pr['name'] ?></td>
+                    <td><?php echo $pr['price'] ?></td>
                 </tr>
-            <?php
-            endforeach;
-            ?>
+            <?php endforeach; ?>
             <!-- <tr>
                 <td>2</td>
                 <td>Keyboard</td>
@@ -48,7 +46,12 @@
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <input type="text" name="name" id="name" placeholder="Search by name: ">
-        <input type="submit" value="Search" name="search" id="">
+        <br>
+        <label for="low-price">Price:</label><br>
+        <input type="text" name="low-price" id="low-price" placeholder="Lowest: ">
+        <input type="text" name="high-price" id="high-price" placeholder="Highest: "><br>
+        <input type="submit" name="reset" id="reset" value="Reset search">
+        <input type="submit" value="Search" name="search">
     </form>
 </body>
 

@@ -8,6 +8,7 @@
         echo $email . "<br>";
         echo $comment . "<br>";
         echo $gender . "<br>";
+        echo "Kodovi za htmlspecialchars: &amp; &quot; &lt";
     }
 
     ?>
