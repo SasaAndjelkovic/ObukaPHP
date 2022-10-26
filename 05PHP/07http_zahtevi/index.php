@@ -24,7 +24,7 @@ if (isset($_GET["login"])) {
         <h3>Login forma</h3>
         <input type="text" name="username" id="username" placeholder="Username:"><br>
         <input type="password" name="password" id="password" placeholder="Password: "><br>
-        <input type="submit" name="login " value="Login">
+        <input type="submit" name="login" value="Login">
     </form>
     <form action="home.php" method="post">
         <h2>Forma za registraciju</h2>
