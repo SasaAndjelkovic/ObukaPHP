@@ -1,3 +1,9 @@
+<?php
+
+require "dbBroker.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
