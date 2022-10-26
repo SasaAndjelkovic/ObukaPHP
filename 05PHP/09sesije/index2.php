@@ -2,6 +2,21 @@
 
 require "dbBroker.php";
 
+session_start();
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $uname = $_POST['username'];
+    $upass = $_POST['password'];
+    $user_id = 1;
+
+    foreach ($baza as $ue) {
+        if ($ue['username'] == $uname && $ue['password'] == $upass) {
+            header('Location: prodavnica.php');
+            exit();
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
