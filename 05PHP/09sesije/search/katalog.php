@@ -39,16 +39,7 @@
                 </tr>
             <?php endforeach; ?>
             <a href="?vidi_korpu">Go to cart</a>
-            <!-- <tr>
-            <td>2</td>
-            <td>Keyboard</td>
-            <td>150</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Monitor</td>
-            <td>400</td>
-        </tr> -->
+
         </tbody>
     </table>
 

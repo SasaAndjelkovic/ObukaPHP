@@ -11,6 +11,11 @@
 <body>
 
     <h3>Proizvodi u korpi</h3>
+
+    <form action="" method="post">
+        <input type="submit" name="submit" value="Remove">
+    </form>
+
     <table border="1">
         <thead>
             <tr>
@@ -18,6 +23,7 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Add to cart</th>
+                <th>Remove from cart</th>
             </tr>
 
         </thead>
@@ -33,6 +39,12 @@
                         <form action="" method="post">
                             <input type="hidden" name="id" value="<?php echo $pr['id']; ?>">
                             <input type="submit" name="submit" value="Add">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="" method="post">
+                            <input type="hidden" name="id" value="<?php echo $pr['id']; ?>">
+                            <input type="submit" name="submit" value="Remove">
                         </form>
                     </td>
 

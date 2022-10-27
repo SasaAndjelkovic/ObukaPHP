@@ -8,7 +8,7 @@ $baza = array(
     ),
     array(
         "id" => 2,
-        "username" => "Petar",
+        "username" => "petar",
         "password" => "petar123"
     )
 );

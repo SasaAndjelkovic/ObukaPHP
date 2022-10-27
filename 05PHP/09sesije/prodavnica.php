@@ -44,7 +44,13 @@ $niz_proizvoda = array(
 
 $search_niz = array();
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: .');
+}
 
 if (!isset($_SESSION['korpa'])) {
     $_SESSION['korpa'] = array();
@@ -53,6 +59,12 @@ if (!isset($_SESSION['korpa'])) {
 if (isset($_POST['submit']) && $_POST['submit'] == "Add") {
     $_SESSION['korpa'][] = $_POST['id'];
     header('Location: prodavnica.php');
+    exit();
+}
+
+if (isset($_POST['submit']) && $_POST['submit'] == "Remove") {
+    $_SESSION['korpa'] = array();
+    header('Location: prodavnica.php?vidi_korpu');
     exit();
 }
 
