@@ -1,4 +1,4 @@
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
     <label for="name">Name: </label>
     <input type="text" name="name" id="name" placeholder="Enter your name: "><br>
     <!-- <span class="error">*<?php echo $nameErr ?></span><br> -->

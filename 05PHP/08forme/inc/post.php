@@ -9,6 +9,7 @@ $nameErr = $emailErr = $genderErr = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
         $nameErr = "Name is required";
+        //vezano za span u get.php
     } else {
         $name = test_inputs($_POST["name"]);
     }

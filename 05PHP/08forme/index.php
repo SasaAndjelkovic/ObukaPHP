@@ -4,9 +4,9 @@ require __DIR__ . '/inc/header.php';
 
 $req = strtoupper($_SERVER["REQUEST_METHOD"]);
 
-if ($req == "get") {
+if ($req == "GET") {
     require __DIR__ . '/inc/get.php';
-} elseif ($req == "post") {
+} elseif ($req == "POST") {
     require __DIR__ . '/inc/post.php';
     require __DIR__ . '/inc/response.php';
 }

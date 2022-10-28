@@ -14,6 +14,7 @@
         Welcome <?php echo $_POST["name"]; ?> <br>
         Registred email address: <?php echo $_POST["email"]; ?> <br>
         <?php // print_r($_POST); 
+        // ([name]=>Sasa [email]=>sandjelkovickg@gmail.com)
         ?>
 
         <!-- GET method 

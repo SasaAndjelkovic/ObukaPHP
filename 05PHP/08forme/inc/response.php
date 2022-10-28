@@ -1,7 +1,7 @@
 <h2>Your input: </h2>
 <p>
     <?php
-    if ($nameErr || $email || $genderErr) {
+    if ($nameErr || $emailErr || $genderErr) {
         echo "<span class='error'>Enter required data </span>";
     } else {
         echo $name . "<br>";
