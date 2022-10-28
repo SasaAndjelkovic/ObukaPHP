@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/inc/header.php';
+require __DIR__ . '/inc/header.php';  //konketizacija
 
 $req = strtoupper($_SERVER["REQUEST_METHOD"]);
 
