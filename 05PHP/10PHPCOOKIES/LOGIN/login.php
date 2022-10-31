@@ -1,9 +1,3 @@
-<?php
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,10 +21,10 @@
         <div>
             <input type="text" id="email" name="email" placeholder="Unesi email..."><br>
         </div>
-        <input type="text" name="ime" placeholder="Unesi ime...">
         <label for="password">Sifra:</label>
-        <div> <input type="password" name="password" id="password" placeholder="Unesi sifru..."><br><br></div>
-
+        <div> <input type="password" name="password" id="password" placeholder="Unesi sifru..."><br></div>
+        <label for="password">Ime:</label>
+        <div><input type="text" name="ime" placeholder="Unesi ime..."><br><br></div>
         <input type="checkbox" name="remember" id="remember">Zapamite me <br><br>
         <input type="submit" value="Login" name="submit">
     </form>
