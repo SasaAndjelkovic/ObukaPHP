@@ -1,10 +1,3 @@
-<!-- <?php
-
-        // require "model/tim.php";
-
-        ?> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 

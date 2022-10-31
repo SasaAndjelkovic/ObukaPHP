@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         }
         require __DIR__ . "/search/katalog.php";
         exit();
-    } elseif (isset($_GET["low-price"]) || isset($_GET["high-price"])) {
+    } elseif (isset($_GET["low-price"]) || /*samo kod prvog if je potrebna i ova provera*/ isset($_GET["high-price"])) {
         $search_niz = array();
         $lowest = $higest = 0;
         if (!empty($_GET["low-price"])) {

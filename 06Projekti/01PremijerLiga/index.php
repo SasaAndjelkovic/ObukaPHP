@@ -18,6 +18,36 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
 }
 
+// $dodaj = $_POST['dodajTim'];
+// if (isset($dodaj)) {
+//     $dodaj[] = array(
+//         $dodaj["nazivTima"],
+//         $dodaj["drzava"],
+//         $dodaj["godinaOsnivanja"],
+//         $dodaj["brojTitula"]
+//     );
+// }
+
+// $dodaj = $_POST['dodajTim'];
+// if (isset($dodaj)) {
+//     $dodaj[] = array(
+//         "nazivTima" =>
+//         $dodaj["nazivTima"],
+//         "drzava" =>
+//         $dodaj["drzava"],
+//         "godinaOsnivanja" =>
+//         $dodaj["godinaOsnivanja"],
+//         $dodaj["brojTitula"]
+//     );
+// }
+
+
+
+if (isset($_GET['addTeam'])) {
+    include "addTeam.php";
+    exit();
+}
+
 if (isset($_SESSION['username'])) {
     include "home.php";
     exit();
@@ -34,4 +64,13 @@ function login($username, $password)
         }
         return false;
     }
+}
+
+function findMaxId()
+{
+    $idjevi = [];
+    foreach ($_SESSION['timovi'] as $tim) {
+        $idjevi[] = $tim['timID'];
+    }
+    return max($idjevi);
 }
