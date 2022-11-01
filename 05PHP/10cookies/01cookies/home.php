@@ -28,7 +28,7 @@ $user = [
 //setcookie('user', $user, time() + 3600);
 //Serijalizacija
 $userSerijalizovan = serialize($user);
-setcookie("user", $userSerijalizovan, time() + 3600);
+setcookie('user', $userSerijalizovan, time() + 3600);
 
 $userCookie = $_COOKIE['user'];
 echo "<br>" . $userCookie;
