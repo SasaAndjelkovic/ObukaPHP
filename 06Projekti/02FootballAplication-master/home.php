@@ -1,5 +1,5 @@
-<?php 
-    require 'model/tim.php';
+<?php
+require 'model/tim.php';
 ?>
 
 <!DOCTYPE html>
@@ -38,34 +38,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php
+                    <?php
                     if (!isset($_SESSION['timovi-search']))
                         foreach ($_SESSION['timovi'] as $tim) :
+
                     ?>
-                    <tr>
-                        <td> <?php echo $tim['timID']; ?></td>
-                        <td> <?php echo $tim['nazivTima']; ?></td>
-                        <td> <?php echo $tim['drzava']; ?> </td>
-                        <td> <?php echo $tim['godinaOsnivanja']; ?></td>
-                        <td> <?php echo $tim['brojTitula']; ?> </td>
-                        <td>
-                            <form action="" method="get">
-                                <input type="hidden" name="timID-izmeni" value="<?php echo $tim['timID']; ?>">
-                                <button id="btn-izmeni" class="btn" data-toggle="modal" data-target="#izmeniModal"><img src="image/edit.png" style="width: 25px;height: 25px;"></button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="" method="get">
-                                <input type="hidden" name="timID-izbrisi" value="<?php echo $tim['timID']; ?>">
-                                <button id="btn-izbrisi" type="submit" class="btn"><img src="image/delete.png" style="width: 25px;height: 25px;"></button>
-                            </form>
-                        </td>
-                    </tr>
-                <?php 
-                endforeach; else 
-                    foreach ($_SESSION['timovi-search'] as $tim) {
-                        ?>
-                         <tr>
+                        <tr>
+                            <td> <?php echo $tim['timID']; ?></td>
+                            <td> <?php echo $tim['nazivTima']; ?></td>
+                            <td> <?php echo $tim['drzava']; ?> </td>
+                            <td> <?php echo $tim['godinaOsnivanja']; ?></td>
+                            <td> <?php echo $tim['brojTitula']; ?> </td>
+                            <td>
+                                <form action="" method="get">
+                                    <input type="hidden" name="timID-izmeni" value="<?php echo $tim['timID']; ?>">
+                                    <button id="btn-izmeni" class="btn" data-toggle="modal" data-target="#izmeniModal"><img src="image/edit.png" style="width: 25px;height: 25px;"></button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="" method="get">
+                                    <input type="hidden" name="timID-izbrisi" value="<?php echo $tim['timID']; ?>">
+                                    <button id="btn-izbrisi" type="submit" class="btn"><img src="image/delete.png" style="width: 25px;height: 25px;"></button>
+                                </form>
+                            </td>
+                        </tr>
+                    <?php
+                        endforeach;
+                    else
+                        foreach ($_SESSION['timovi-search'] as $tim) {
+                    ?>
+                        <tr>
                             <td>0<?php echo $tim["timID"] ?></td>
                             <td><?php echo $tim["nazivTima"] ?></td>
                             <td><?php echo $tim["drzava"] ?></td>
