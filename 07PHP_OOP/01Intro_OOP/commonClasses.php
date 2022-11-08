@@ -72,5 +72,8 @@ class Student
     function getStatus()
     {
         return $this->name . ' ' . ' ' . $this->lastName . ' ' . $this->grade;
+        function __destruct()
+        {
+        }
     }
 }
