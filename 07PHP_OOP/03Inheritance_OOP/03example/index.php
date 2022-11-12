@@ -69,4 +69,5 @@ $laptopOne->setModel("HP");
 $laptopOne->setLaptopNameProcessor($processorOne);
 $userOne = new User;
 $userOne->setName("Sinji Andjelko");
-echo $userOne->getName() . " ima laptop modela " . $laptopOne->getModel() . " sa procesorom " . $processorOne->getNameProcessor();
+echo $userOne->getName() . " ima laptop modela " . $laptopOne->getModel() .
+    " sa procesorom " . $processorOne->getNameProcessor();
