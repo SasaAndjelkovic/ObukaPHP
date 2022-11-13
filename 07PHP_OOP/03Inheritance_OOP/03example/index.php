@@ -36,6 +36,12 @@ class Laptop
         return $this->laptopNameProcessor;
     }
 
+    // Uncaught Error: Object of class Processor could not be converted to string
+    // function getLaptop()
+    // {
+    //     return " laptop modela " . $this->model . " i procesora " . $this->laptopNameProcessor;
+    // }
+
     function setModel($model)
     {
         $this->model = $model;
@@ -67,6 +73,7 @@ $processorOne->setNameProcessor("Intel");
 $laptopOne = new Laptop;
 $laptopOne->setModel("HP");
 $laptopOne->setLaptopNameProcessor($processorOne);
+// echo $laptopOne->getLaptop();
 $userOne = new User;
 $userOne->setName("Sinji Andjelko");
 echo $userOne->getName() . " ima laptop modela " . $laptopOne->getModel() .
