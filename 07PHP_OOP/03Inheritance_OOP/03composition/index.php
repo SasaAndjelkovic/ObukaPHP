@@ -8,7 +8,8 @@
 
 class Processor
 {
-    private string $nameProcessor;
+    // private string $nameProcessor;
+    protected string $nameProcessor;
 
     function getNameProcessor()
     {
@@ -37,10 +38,11 @@ class Laptop
     }
 
     // Uncaught Error: Object of class Processor could not be converted to string
-    // function getLaptop()
-    // {
-    //     return " laptop modela " . $this->model . " i procesora " . $this->laptopNameProcessor;
-    // }
+    // Zato sto je $nameProcessor bila private; protected je ok
+    function getLaptop()
+    {
+        return " laptop modela " . $this->model . " i procesora " . $this->laptopNameProcessor;
+    }
 
     function setModel($model)
     {
