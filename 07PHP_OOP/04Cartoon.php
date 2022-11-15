@@ -28,7 +28,7 @@ abstract class CartoonCaracter {
 
 class Simpsons extends CartoonCaracter {
     function catchPhrase(){
-        echo $this->name . ": Auch!";
+        echo $this->name . ": 'Unclean codes are not a teacher day gift'";
     }
 
 	public function makeSound() {
