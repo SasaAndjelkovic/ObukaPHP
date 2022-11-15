@@ -34,6 +34,7 @@
 //class can implement 0..n interfaces
 //class must implement all the methods of interface
 //interface can extend an interface (manje se upotrebljava)
+//interface ChickenBehavior extends DogsBehavior
 
 interface DogsBehavior
 {
