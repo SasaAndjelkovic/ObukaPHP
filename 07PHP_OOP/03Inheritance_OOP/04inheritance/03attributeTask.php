@@ -18,7 +18,7 @@ class Calculator
 
 class Person
 {
-    public string $firstName;
+    public string $firstNameInh;
     public string $lastName;
     public Calculator $calculator;
 }
@@ -29,13 +29,13 @@ class Student extends Person
 }
 
 $student = new Student();
-$student->firstName = "Sinji";
+$student->firstNameInh = "Sinji";
 $student->lastName = "Andjelko";
 $student->indexNumber = 123;
-$student->firstName = "Igor";
+$student->firstNameInh = "Igor";
 
 $calculator = new Calculator();
 $calculator->model = "Casio";
 
-$student->calculator = $calculator;
-echo $student->calculator->model;
+$student->calculatorInh = $calculator;
+echo $student->calculatorInh->model;
