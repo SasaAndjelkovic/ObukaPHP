@@ -23,6 +23,7 @@ abstract class CartoonCaracter {
     function walk(){}
     function jump(){}
     abstract function makeSound();
+	abstract function catchPhrase();
 }
 
 class Simpsons extends CartoonCaracter {
@@ -37,24 +38,12 @@ class Simpsons extends CartoonCaracter {
 class LoonieTunes extends CartoonCaracter {
     function catchPhrase(){}
 	
-	public function walk() {
-	}
-	
-	public function jump() {
-	}
-	
 	public function makeSound() {
 	}
 }
 
 class Disney extends CartoonCaracter {
     function catchPhrase(){}
-	
-	public function walk() {
-	}
-	
-	public function jump() {
-	}
 
 	public function makeSound() {
         echo $this->name . " sings: 'A Dream Is A Wish Your Heart Makes'";
@@ -84,24 +73,12 @@ class SchoolKids extends Simpsons implements Learn, Play {
 	
 	public function running() {
 	}
-	
-	public function walk() {
-	}
-	
-	public function jump() {
-	}
 }
 
 class Rabbits extends LoonieTunes implements Play {
 
 	public function running() {
         echo $this->name . " is running away from Milica"; 
-	}
-	
-	public function walk() {
-	}
-	
-	public function jump() {
 	}
 }
 
@@ -121,18 +98,13 @@ class Princesses extends Disney implements Learn, Play, BackToLife {
 	
 	public function shining() {
 	}
-	
-	public function walk() {
-	}
-	
-	public function jump() {
-	}
 }
 
 $schoolKid = new SchoolKids();
 $schoolKid->setName("Bart");
 $schoolKid->catchPhrase();
 echo "<br>";
+
 $rubbit = new Rabbits();
 $rubbit->setName("Bugs Bunny");
 $rubbit->running();
