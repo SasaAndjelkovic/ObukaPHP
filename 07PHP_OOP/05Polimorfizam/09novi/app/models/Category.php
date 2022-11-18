@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Models;
+use App\Templates\ModelTemplate;
+
 class Category extends ModelTemplate {
     protected int $id;
     protected string $catName;

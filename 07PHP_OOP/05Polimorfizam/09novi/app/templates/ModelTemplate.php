@@ -1,6 +1,8 @@
 <?php
 
-abstract class Webstore {
+namespace App\Templates;
+
+abstract class ModelTemplate {
     abstract function viewAll();
     
     abstract function add();

@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Models;
+use App\Templates\ModelTemplate;
+
 class Item extends ModelTemplate {
     protected int $id;
     protected string $itemName;
