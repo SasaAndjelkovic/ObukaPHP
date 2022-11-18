@@ -39,4 +39,9 @@ class Category extends ModelTemplate {
     public function remove(){
     
     }
+
+    public function __toString()
+    {
+        return "".$this->id;
+    }
 }
