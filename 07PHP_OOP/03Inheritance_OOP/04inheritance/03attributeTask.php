@@ -33,9 +33,11 @@ $student->firstNameInh = "Sinji";
 $student->lastName = "Andjelko";
 $student->indexNumber = 123;
 $student->firstNameInh = "Igor";
+echo "<br>" . $student->firstNameInh;
 
 $calculator = new Calculator();
 $calculator->model = "Casio";
 
 $student->calculatorInh = $calculator;
 echo $student->calculatorInh->model;
+
