@@ -22,7 +22,7 @@ class Customer {
     {
         if ($this->money < $p->getPrice() * $quantity) echo "nemas dovoljno novca";
        else { 
-        if ($p->reduceAmount($quantity)) $this->money -= $p->getPrice();
+        if ($p->reduceAmount($quantity)) $this->money -= $p->getPrice() * $quantity;
         else 
         echo "There is no more" . $p->getProductName();
         } 
