@@ -32,12 +32,16 @@ class Product {
         return $this->amount;
     }
 
-    public function reduceAmount($quantity) {
+    public function getId(): int {
+		return $this->id;
+	}
+
+    public function reduceAmount($quantity = 1) {
         if ($this->amount >= $quantity) {
             $this->amount -= $quantity;
             return true;
         } else 
-        return false;
+            return false;
     }
     
     public function __toString()
@@ -45,6 +49,5 @@ class Product {
         return "Product: $this->productName with id: $this->id is type of $this->productType. Price of this 
         {$this->price}din and its amount is $this->amount <br>";
     }
-
 	
 }
