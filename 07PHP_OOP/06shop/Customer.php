@@ -1,13 +1,15 @@
 <?php
 
-class Customer {
-    private int $id;
-    private string $firstname;
-    private string $lastname;
+require_once "ICustomer.php";
 
-    private int $age;
+class Customer implements ICustomer {
+    protected int $id;
+    protected string $firstname;
+    protected string $lastname;
 
-    private float $money;
+    protected int $age;
+
+    protected float $money;
 
     public function __construct($id, $firstname, $lastname, $age, $money)
     {
@@ -20,11 +22,13 @@ class Customer {
 
     public function buyProduct(Product $p, $quantity=1) 
     {
-        if ($this->money < $p->getPrice() * $quantity) echo "nemas dovoljno novca";
-       else { 
-        if ($p->reduceAmount($quantity)) $this->money -= $p->getPrice() * $quantity;
-        else 
-        echo "There is no more" . $p->getProductName();
+        if ($this->money < $p->getPrice() * $quantity) 
+            echo "nemas dovoljno novca";
+        else { 
+            if ($p->reduceAmount($quantity)) 
+                $this->money -= $p->getPrice() * $quantity;
+            else 
+            echo "There is no more" . $p->getProductName();
         } 
     }
 
@@ -33,9 +37,18 @@ class Customer {
 	}
 
     public function __toString()
-    //overwrite metoda, mora da ima return
+    //overwrite (hm, ili override) metoda, mora da ima return
     {
         return "Osoba " . $this->id . " sa imenom " . $this->firstname . " ". $this->lastname . " ima godina " . $this->age . 
-        ". He went to the stop with {$this->money}din. <br>";
+        ". He went to the shop with {$this->money}din. <br>";
     }
+	
+	public function buy(Order $o) {
+        if ($this->money < $o->getTotalPrice())
+            echo "You dont have enough money!";
+        else {
+            $this->money -= $o->getTotalPrice();
+            echo "$this->firstname has bought:<br> $o";
+        }
+	}
 }

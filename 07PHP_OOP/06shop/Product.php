@@ -36,6 +36,10 @@ class Product {
 		return $this->id;
 	}
 
+    public function getProductType(): string {
+		return $this->productType;
+	}
+
     public function reduceAmount($quantity = 1) {
         if ($this->amount >= $quantity) {
             $this->amount -= $quantity;
