@@ -4,7 +4,7 @@
 //traits - jednu osobinu (ne celu klasu) implementiramo na vise mesta
 //to je horizontalni reusability (nasledjivanje nam daje vertikalni reusability)
 
-trait Logger {
+trait Logger1 {
     public function log($msg){
         echo date('Y-m-d h:i:s') . " | " . $msg . "<br>";
     }
@@ -17,7 +17,7 @@ trait Remover {
 }
 
 class BankAccount {
-    use Logger;
+    use Logger1;
     private $accnum;
     public function __construct($accnum)
     {
@@ -27,7 +27,7 @@ class BankAccount {
 }
 
 class User {
-    use Logger, Remover;
+    use Logger1, Remover;
     public function __construct()
     {
         $this->log("A new user is created");
