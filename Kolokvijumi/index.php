@@ -1,8 +1,25 @@
 <?php
 
-if(isset($_POST['username']) && isset($_POST['password'])) {
-    $us
+require "dbBroker.php";  //najpre bazu
+require "model/user.php";
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $korisnik = new User(1, $username, $password);
+    $odgovor = User::loginUser($korisnik, $conn);
+    print_r($odgovor);
+    // //vraca neki result set iz baze  -- mysqli_result Object ( [current_field] => 0 [field_count] => 3 [lengths] => [num_rows] => 0 [type] => 0 )
+
+    if($odgovor->num_rows == 1) {
+        header("Location: home.php");
+        exit();
+    } else
+        echo "User ne postoji!";
+
 }
+
 ?>
 
 <!DOCTYPE html>
