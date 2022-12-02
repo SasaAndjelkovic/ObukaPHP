@@ -1,3 +1,28 @@
+<?php
+
+require "dbBroker.php";
+require "model/prijava.php";
+
+//ako nije logovan korisnik, da ga vrati na index.php
+//provera se radi preko SESIJE
+// ...
+
+$podaci = Prijava::prikaziSve($conn);
+
+//da li su uspesno vraceni podaci
+if(!$podaci) {
+    echo "Nastala greska pri preuzimanju podataka";
+    exit();
+}
+
+//da li ima prijava u bazi
+if($podaci->num_rows == 0) {
+    echo "Nema prijava u bazi!";
+    exit();
+} else {
+    //nastavak u okviru html tabele
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,11 +71,12 @@
             </tr>
             </thead>
             <tbody>
+                <?php while ($red = $podaci->fetch_array()):?>
                 <tr>
-                    <td>Naziv predmeta</td>
-                    <td>Katedra</td>
-                    <td>Sala</td>
-                    <td>Datum</td>
+                    <td><?php echo $red["predmet"]?></td>
+                    <td><?php echo $red["katedra"]?></td>
+                    <td><?php echo $red["sala"]?></td>
+                    <td><?php echo $red["datum"]?></td>
                     <td>
                         <form action="" method="POST">
                         <label class="custom-radio-btn">
@@ -61,6 +87,7 @@
                         </form>
                     </td>
                 </tr>
+                <?php endwhile; }?>
             </tbody>
         </table>
         <div class="row" >
