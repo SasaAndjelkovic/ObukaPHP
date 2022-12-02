@@ -7,7 +7,7 @@ class Prijava {
     public $sala;
     public $datum;
 
-    public function __construct($id=null, $predmet, $katedra, $sala, $datum)
+    public function __construct($id=null, $predmet=null, $katedra=null, $sala=null, $datum=null)
     {
         $this->id= $id;
         $this->predmet= $predmet;
@@ -29,6 +29,12 @@ class Prijava {
         $query = "INSERT INTO prijave(predmet, katedra, sala, datum) 
                   VALUES ('$prijava->predmet', '$prijava->katedra', '$prijava->sala', '$prijava->datum')";
 
+        return $conn->query($query);
+    }
+
+    //brisanje
+    public function obrisi(mysqli $conn) {
+        $query = "DELETE FROM prijave WHERE id=$this->id";
         return $conn->query($query);
     }
 }

@@ -78,7 +78,7 @@ if($podaci->num_rows == 0) {
                     <td><?php echo $red["sala"]?></td>
                     <td><?php echo $red["datum"]?></td>
                     <td>
-                        <form action="" method="POST">
+                        <form action="handler/delete.php" method="POST">
                         <label class="custom-radio-btn">
                             <input type="radio" name="checked-donut" value=<?php echo $red["id"]?>>
                             <span class="checkmark"></span>
