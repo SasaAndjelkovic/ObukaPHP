@@ -26,7 +26,7 @@ class Prijava {
 
     //kreiranje/dodavanje nove prijave
     public static function dodaj(Prijava $prijava, mysqli $conn) {
-        $query = "INSERT INTO prijave(predmet, katedre, sala, datum) 
+        $query = "INSERT INTO prijave(predmet, katedra, sala, datum) 
                   VALUES ('$prijava->predmet', '$prijava->katedra', '$prijava->sala', '$prijava->datum')";
 
         return $conn->query($query);
