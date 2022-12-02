@@ -107,14 +107,14 @@ if($podaci->num_rows == 0) {
 <div class="modal fade" id="myModal" role="dialog" >
     <div class="modal-dialog">
 
-        <!--Sadrzaj modala-->
+        <!--Sadrzaj modala - ZAKAZI, KREIRAJ-->
         <div class="modal-content" >
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="container prijava-form">
-                    <form action="#" method="post" id="dodajForm">
+                    <form action="handler/create.php" method="post" id="dodajForm">
                         <h3 style="color: black; text-align: center" >Zakazi kolokvijum</h3>
                         <div class="row">
                             <div class="col-md-11 ">
