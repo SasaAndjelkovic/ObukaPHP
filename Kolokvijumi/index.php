@@ -3,6 +3,10 @@
 require "dbBroker.php";  //najpre bazu
 require "model/user.php";
 
+if (!isset($_SESSION)) {
+    session_start();
+}
+
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -13,6 +17,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     // //vraca neki result set iz baze  -- mysqli_result Object ( [current_field] => 0 [field_count] => 3 [lengths] => [num_rows] => 0 [type] => 0 )
 
     if($odgovor->num_rows == 1) {
+        $_SESSION['user_id'] = $korisnik->id;
         header("Location: home.php");
         exit();
     } else
