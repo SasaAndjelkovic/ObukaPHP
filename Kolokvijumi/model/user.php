@@ -18,7 +18,9 @@ class User {
                   WHERE username = '$korisnik->username' 
                         AND password = '$korisnik->password'
                   ";
-        echo $query;
+        //echo $query;
+
+        //vraca neki result set iz baze  -- mysqli_result Object ( [current_field] => 0 [field_count] => 3 [lengths] => [num_rows] => 0 [type] => 0 )
         return $conn->query($query);
     }
 }

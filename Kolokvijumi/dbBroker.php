@@ -6,7 +6,7 @@
     $database = "kolokvijumi";
 
     $conn = new mysqli($host, $user, $pass, $database);
-    print_r($conn);
+    //print_r($conn);
 
     //provera da li je to uspesno
     if($conn->connect_errno) {
