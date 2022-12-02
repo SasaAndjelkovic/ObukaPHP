@@ -80,7 +80,7 @@ if($podaci->num_rows == 0) {
                     <td>
                         <form action="" method="POST">
                         <label class="custom-radio-btn">
-                            <input type="radio" name="checked-donut" value=0>
+                            <input type="radio" name="checked-donut" value=<?php echo $red["id"]?>>
                             <span class="checkmark"></span>
                         </label>
                         <button id="btn-obrisi" class="btn btn-danger" style="background-color: red; border: 1px solid white;">Obrisi</button>
