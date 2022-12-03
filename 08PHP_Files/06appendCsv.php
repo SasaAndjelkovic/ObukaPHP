@@ -1,6 +1,8 @@
 <?php
 
-$data = [];
+function addRowCsv($simbol, $kompanija, $cena) {
+
+    $data = [$simbol, $kompanija, $cena];
 
 $fileName = 'files/stocks.csv';
 
@@ -12,7 +14,9 @@ if($fileResource === false) {
 }
 
 // upisujemo red u .csv fajl
-fputcsv($fileResource, $row);
-
+fputcsv($fileResource, $data);  //ne $row
+ 
 // zatvranje fajla
 fclose($fileResource);
+
+}
