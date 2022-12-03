@@ -2,11 +2,13 @@
 
 include '05readCsv.php';
 include '06appendCsv.php';
+include '08writeJson.php';
 
 if(isset($_POST['simbol']) && isset($_POST['kompanija']) && isset($_POST['cena'])){
     if ($_POST['simbol'] != "") {
         //pozivamo fju za upis u .csv fajl
         addRowCsv($_POST['simbol'], $_POST['kompanija'], $_POST['cena']);
+        addRowJson($_POST['simbol'], $_POST['kompanija'], $_POST['cena']);
         $_POST = array(); // posle preuzimanja podataka iz superglobalne promenljive brisemo podatke
     }
 }
