@@ -130,7 +130,7 @@ $result = Course::getAll($conn);
                 </div>
                 <div class="modal-body">
                     <div class="container course-form" style="width:100%">
-                        <form action="#" method="post" id="dodajForm">
+                        <form action="handler/add.php" method="post" id="dodajForm">
                             <h3 style="color: black">Add course</h3>
                             <div class="update-form-row">
                                 <div class="col-md-6" style="width:100%">

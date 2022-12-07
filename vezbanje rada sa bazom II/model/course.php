@@ -26,4 +26,12 @@ class Course {
 
         return $conn->query($q);
     }
+
+    public static function add($naziv, $provajder, $opis, $cena, mysqli $conn)
+    {
+        $q = "INSERT INTO course(naziv, provajder, opis, cena) 
+                  VALUES ('$naziv', '$provajder', '$opis', $cena)";
+
+        return $conn->query($q);
+    }
 }
