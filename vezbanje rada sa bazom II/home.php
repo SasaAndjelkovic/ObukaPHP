@@ -175,7 +175,7 @@ $result = Course::getAll($conn);
                 </div>
                 <div class="modal-body">
                     <div class="container course-form">
-                        <form action="#" method="post" id="izmeniForm">
+                        <form action="handler/update.php" method="post" id="izmeniForm">
                             <h3 style="color: black">Change course</h3>
                             <div class="change-course-row">
                                 <div class="col-md-6">
@@ -186,7 +186,7 @@ $result = Course::getAll($conn);
                                         <input id="nazivv" type="text" name="nazivKursa" class="form-control" placeholder="Course name *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input id="provajdera" type="text" name="provajderKursa" class="form-control" placeholder="Course provider *" value="" />
+                                        <input id="provajderr" type="text" name="provajderKursa" class="form-control" placeholder="Course provider *" value="" />
                                     </div>
                                     <div class="form-group">
                                         <input id="cenaa" type="number" name="cenaKursa" class="form-control" placeholder="Cource price *" value="" />

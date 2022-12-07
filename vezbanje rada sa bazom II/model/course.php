@@ -34,4 +34,14 @@ class Course {
 
         return $conn->query($q);
     }
+
+    public static function update($id, $naziv, $provajder, $opis, $cena, $conn) {
+
+        $q = "UPDATE tim 
+              SET naziv ='$naziv', provajder = '$provajder', opis = '$opis', cena = '$cena' 
+              WHERE timID = $id";
+        return $conn->query($q);
+    }
+
+
 }
