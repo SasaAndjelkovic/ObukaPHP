@@ -17,15 +17,24 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['name'])) {
+if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $name = $_POST['name'];
 
-    $korisnik = new User(1, $username, $password, $name);
-    $odgovor = User::login($username, $password, $conn);
+    $korisnik = new User(0, $username, $password, "Neko");
+    $response = $korisnik->loginUser($conn);
 
+    if ($response->num_rows== 1) {
+        $_SESSION['user_id'] = $response->fetch_assoc()['id'];
+        $korisnik->id = $response->fetch_assoc()['id'];
+        $korisnik->name = $response->fetch_assoc()['name'];
+        header("Location: home.php");
+        exit();
+    } else
+        echo "User ne postoji!";
 
+}
 
 ?>
 
