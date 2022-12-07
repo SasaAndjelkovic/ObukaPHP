@@ -1,5 +1,10 @@
 <?php
 
+include "dbBroker.php";
+include "model/course.php";
+
+$result = Course::getAll($conn);
+
 ?>
 
 <!DOCTYPE html>
