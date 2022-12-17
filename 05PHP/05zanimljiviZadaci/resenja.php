@@ -185,9 +185,9 @@
             // echo ($ma[$i][$j] + $mb[$i][$j]) . " ";
         }
         return $mc;
-        echo "<br>";
     }
 
+    echo "<br>";
     echo "***Deveti zadatak***<br>";
     echo "Suma dve matrice: <br>";
     echo  writeMatrix(sumMatrix($matrixA, $matrixB)) . "<br>";

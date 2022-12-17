@@ -52,7 +52,7 @@ $result = Course::getAll($conn);
             <p style="color: rgba(255,255,255,.5)">Search by a keyword: </p>
             <form action="?search" method="get">
                 <input type="text" name='search' class="forma1" placeholder="Search courses">
-
+                    
                 <button id="btn-pretraga" class="btn btn-warning btn-block">
                     <i class="glyphicon glyphicon-search"></i> Search
                 </button>
@@ -109,7 +109,7 @@ $result = Course::getAll($conn);
             </table>
             <div class="row" style="padding: 1%">
                 <div>
-                    Prosek svih kurseva: 111
+                    Prosek svih kurseva: <?php echo Course::average($conn);?>
                 </div>
                 <div class="col-md-12" style="text-align: right">
                     <button id="btn-izmeni" class="btn btn-warning" data-toggle="modal" data-target="#izmeniModal"><i class="glyphicon glyphicon-pencil"></i> Izmeni

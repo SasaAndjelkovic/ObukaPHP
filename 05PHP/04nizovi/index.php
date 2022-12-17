@@ -144,7 +144,7 @@ foreach ($osobe["studenti"]["prva_godina"] as $student) {
     echo "ime" . $student["ime"] . "<br>";
     echo "prezime: " . $student["prezime"] . "<br>";
 }
-echo "<br>";
+echo "key => val <br>";
 
 foreach ($osobe["studenti"]["prva_godina"] as $student) {
     foreach ($student as $key => $val) {

@@ -43,5 +43,11 @@ class Course {
         return $conn->query($q);
     }
 
+    public static function average(mysqly $conn) {
+
+        $q = "SELECT ROUND(AVG(cena),2) FROM course;";
+
+        return $conn->query($q)->fetch_array()[0];" 
+    }
 
 }
