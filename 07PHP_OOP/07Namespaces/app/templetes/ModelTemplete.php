@@ -1,5 +1,5 @@
 <?php
-// kasnije namespace App\Templates;
+namespace App\Templates;
 abstract class ModelTemplate {
     abstract function viewAll();
     

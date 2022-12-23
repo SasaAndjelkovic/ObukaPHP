@@ -1,6 +1,6 @@
 <?php
-// namespace App\Models;
-// use App\Templates\ModelTemplate;
+namespace App\Models;
+use App\Templates\ModelTemplate;
 // use Utility\Factory;
 
 class Category extends ModelTemplate {
