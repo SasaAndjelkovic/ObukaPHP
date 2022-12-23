@@ -30,20 +30,19 @@ class Category extends ModelTemplate {
     }
     
     public function viewAll(){
-    
     }
     
     public function add(){
-    
     }
     
     public function remove(){
-    
     }
 
+    //obezbedjuje da se prikaze 
+    //App\Models\Category could not be converted to string 
     public function __toString()
     {
-        return "".$this->id;
+         return "".$this->id;
     }
 }
 ?>

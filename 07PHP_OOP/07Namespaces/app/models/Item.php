@@ -2,9 +2,9 @@
 namespace App\Models;
 use App\Templates\ModelTemplate;
 // use Utility\Factory;
-// use Utility\Printing;
+use Utility\Printing;
 class Item extends ModelTemplate {
-    //use Printing, Factory;
+    use Printing; 
     protected int $id;
     protected string $itemName;
     protected float $price;
