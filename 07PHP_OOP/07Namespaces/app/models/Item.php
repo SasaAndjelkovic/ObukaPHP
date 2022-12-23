@@ -1,10 +1,10 @@
 <?php
 namespace App\Models;
 use App\Templates\ModelTemplate;
-// use Utility\Factory;
+use Utility\Factory;
 use Utility\Printing;
 class Item extends ModelTemplate {
-    use Printing; 
+    use Printing, Factory; 
     protected int $id;
     protected string $itemName;
     protected float $price;
@@ -54,15 +54,12 @@ class Item extends ModelTemplate {
     }
     
     public function viewAll(){
-    
     }
     
     public function add(){
-    
     }
     
     public function remove(){
-    
     }
 }
 

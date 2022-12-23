@@ -1,10 +1,10 @@
 <?php
 namespace App\Models;
 use App\Templates\ModelTemplate;
-// use Utility\Factory;
+use Utility\Factory;
 
 class Category extends ModelTemplate {
-    //use Factory;
+    use Factory;
     protected int $id;
     protected string $catName;
     
