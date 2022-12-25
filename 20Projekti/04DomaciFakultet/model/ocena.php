@@ -17,7 +17,7 @@ class Ocena{
         $this->datum = $dat;
     }
 
-	public function getStudent(): StudentDOm {
+	public function getStudent(): StudentDom {
 		return $this->student;
 	}
 	

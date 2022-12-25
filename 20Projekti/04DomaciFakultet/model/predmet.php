@@ -12,7 +12,7 @@ class Predmet {
         $this->naziv = $naziv;
         $this->sifra = $sifra;
         $this->nivoStudija = $nivoStudija;
-        $this->spisakStudenata = array();
+        $this->spisakStudenata = array();  //inicijalizacija u konstuktoru
         $this->spisakProfesora = array();
     }
 
