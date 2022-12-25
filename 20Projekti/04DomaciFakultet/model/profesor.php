@@ -2,6 +2,8 @@
 
 class Profesor extends Korisnik {
 
+	protected $listaPredmeta;
+
     public function __construct($ime,$prezime,$email,$sifra,$jmbg,$telefon,$tip)
     {
         parent::__construct($ime, $prezime, $email, $sifra, $jmbg, $telefon, $tip);//pristupamo funkcijama u roditelju
@@ -53,6 +55,14 @@ class Profesor extends Korisnik {
 	
 	public function setTip($tipkorisnika) {
         $this->tip = $tipkorisnika;
+	}
+
+	public function getListaPredmeta() {
+		return $this->listaPredmeta;
+	}
+	
+	public function setListaPredmeta($listaPredmeta) {
+		$this->listaPredmeta = $listaPredmeta;
 	}
 }
 
