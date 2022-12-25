@@ -16,6 +16,36 @@ class Predmet {
         $this->spisakProfesora = array();
     }
 
+	public function getNaziv()
+    {
+        return $this->naziv;
+    }
+
+    public function setNaziv($naziv)
+    {
+        $this->naziv = $naziv;
+    }
+
+    public function getSifra()
+    {
+        return $this->sifra;
+    }
+
+    public function setSifra($sifra)
+    {
+        $this->sifra = $sifra;
+    }
+
+    public function getNivoStudija()
+    {
+        return $this->nivoStudija;
+    }
+
+    public function setNivoStudija($nivoStudija)
+    {
+        $this->nivoStudija = $nivoStudija;
+    }
+
 	public function getSpisakStudenata() {
 		return $this->spisakStudenata;
 	}

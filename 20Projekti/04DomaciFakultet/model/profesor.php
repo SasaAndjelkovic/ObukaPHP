@@ -2,7 +2,7 @@
 
 class Profesor extends Korisnik {
 
-	protected $listaPredmeta;
+	protected $nizPredmeta;
 
     public function __construct($ime,$prezime,$email,$sifra,$jmbg,$telefon,$tip)
     {
@@ -57,12 +57,12 @@ class Profesor extends Korisnik {
         $this->tip = $tipkorisnika;
 	}
 
-	public function getListaPredmeta() {
-		return $this->listaPredmeta;
+	public function getNizPredmeta() {
+		return $this->nizPredmeta;
 	}
-	
-	public function setListaPredmeta($listaPredmeta) {
-		$this->listaPredmeta = $listaPredmeta;
+
+	public function setNizPredmeta($nizPredmeta) {
+		$this->nizPredmeta = $nizPredmeta;
 	}
 }
 
