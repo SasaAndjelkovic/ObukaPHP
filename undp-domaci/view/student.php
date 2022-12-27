@@ -18,4 +18,6 @@ foreach($predmeti as $pr){
 
 Kontroler::prikaziTabelu($mojipredmeti,["naziv", "sifra","nivoStudija","spisakstud","spisakprof"])
 
+
+
 ?>
