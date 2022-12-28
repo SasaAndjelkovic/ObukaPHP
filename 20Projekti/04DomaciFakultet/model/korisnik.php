@@ -1,6 +1,8 @@
 <?php
 
 abstract class Korisnik{
+
+    use Obrada;
     protected $ime;
     protected $prezime;
     protected $email;

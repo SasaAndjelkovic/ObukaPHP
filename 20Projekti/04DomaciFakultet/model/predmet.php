@@ -2,6 +2,8 @@
 
 class Predmet {
 
+    use Obrada;
+
     protected $naziv;
     protected $sifra;
     protected $nivoStudija;

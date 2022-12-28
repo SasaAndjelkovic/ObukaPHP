@@ -1,5 +1,5 @@
 <?php
-//include "utility/obrada.php";
+include "utility/obrada.php";
 include "model/korisnik.php";
 include "model/student.php";
 include "model/ostudent.php";

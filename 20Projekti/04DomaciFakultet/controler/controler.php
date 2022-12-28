@@ -1,37 +1,48 @@
 <?php
 
-class Kontroler{
+class Kontroler
+{
 
-    public static function ulogujKorisnika(Korisnik $korisnik){
-        echo "<br>Ulogovan korisnik: " . $korisnik->getIme()." ".$korisnik->getPrezime();
-
+    public static function ulogujKorisnika(Korisnik $korisnik)
+    {
+        echo "<br>Ulogovan korisnik: " . $korisnik->getIme() . " " . $korisnik->getPrezime();
     }
 
-    public static function prikaziStudente(StudentDom ...$listastudenata){
-        foreach($listastudenata as $st):
-            echo "Status studenta: ".$st->getStatus();
+    public static function prikaziStudente(StudentDom...$listastudenata)
+    {
+        foreach ($listastudenata as $st):
+            echo "Status studenta: " . $st->getStatus();
         endforeach;
     }
 
-    public static function prikaziTabelu($objekti, $nazivi_atributa){
+    public static function prikaziTabelu($objekti, $nazivi_atributa)
+    {
         $headertabele = "<thead><tr>";
-        foreach($nazivi_atributa as $th){
+        foreach ($nazivi_atributa as $th) {
             $headertabele .= "<th>$th</th>";
         }
         $headertabele .= " </tr></thead>";
         $reduTabeli = "<tbody>";
-        foreach($objekti as $objekat){ //za svakog studenta u listi studenata
+        foreach ($objekti as $objekat) { //za svakog studenta u listi studenata
             $reduTabeli .= "<tr>";
-            foreach($objekat as $naziv=>$vrednost){
-                echo $vrednost."<br>";
-                $reduTabeli .= "<td>" . $vrednost . "</td>";
+            // foreach($objekat as $naziv=>$vrednost){
+            //     echo $vrednost."<br>";
+            //     $reduTabeli .= "<td>" . $vrednost . "</td>";
+            foreach ($objekat->konvertujUNiz() as $naziv => $vrednost) {
+                if (gettype($vrednost) != "array") {
+                    // echo "<br>".$naziv.": ".$vrednost;
+                    $reduTabeli .= "<td>" . $vrednost . "</td>";
+                }
+                $reduTabeli .= "</tr>";
             }
-            $reduTabeli .= "</tr>";
-        }
-        $reduTabeli = "</tbody>";
-        $tabela = "<table>" . $headertabele ." ". $reduTabeli . "</table>";
+            // $reduTabeli = "</tbody>";
+            // $tabela = "<table>" . $headertabele ." ". $reduTabeli . "</table>";
+            $reduTabeli .= "</tbody>";
+            $tabela = "<table border='1'>" . $headertabele . " " . $reduTabeli . "</table>";
 
-        return $tabela;
+            // return $tabela;
+            echo $tabela;
+        }
     }
 }
 
