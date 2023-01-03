@@ -10,7 +10,9 @@ include "model/administrator.php";
 include "model/predmet.php";
 include "model/ocena.php";
 
+if(!isset($_SESSION))
 session_start();
+
 $so = new OStudent("tamara", "naumovic", "tamara@elab.rs", "tamara123", "1234567891234", "0662581477", "student", "2020/1005");
 $sm = new MStudent("petar", "lukovac", "petar@elab.rs", "petar123", "1231234891234", "0661281477", "student", "2020/2005");
 $sd = new DStudent("aleksa", "miletic", "aleksaa@elab.rs", "aleksa123", "1234561231234", "0662123477", "student", "2020/3005");
