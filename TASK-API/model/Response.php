@@ -37,7 +37,7 @@ class Response {
             header('Cashe-control: no-cashe, no-store'); //svaki put kada se pozove ide ka serveru (API nesto)
         }
 
-        if(($this->_success !== false && $this->_success !== true) && !is_numeric($this->_httpStatusCode)) {
+        if(($this->_success !== false && $this->_success !== true) || !is_numeric($this->_httpStatusCode)) {
             http_response_code(500); //server greska, status... head deo
             $this->_responseData['statusCode'] = 500;
             $this->_responseData['success'] = false;
