@@ -28,5 +28,31 @@ class Response {
 		$this->_toCashe = $toCashe;
 	}
 
+    public function send() {   //sklopi response objekat i ceo ga posalji klijentu
+        header('Content-type: application/json; charset=utf-8');  //tip sadrzaja koji se vraca je json
+        
+        if($this->_toCashe == true) {
+            header('Cache-control: max-age=60');
+        } else {
+            header('Cashe-control: no-cashe, no-store'); //svaki put kada se pozove ide ka serveru (API nesto)
+        }
+
+        if(($this->_success !== false && $this->_success !== true) && !is_numeric($this->_httpStatusCode)) {
+            http_response_code(500); //server greska, status... head deo
+            $this->_responseData['statusCode'] = 500;
+            $this->_responseData['success'] = false;
+            $this->_messages = array();
+            $this->addMessage('Response creation error');
+            $this->_responseData['messages'] = $this->_messages;
+        } else {
+            http_response_code($this->_httpStatusCode);
+            $this->_responseData['success'] = $this->_success;
+            $this->_responseData['statusCode'] = $this->_httpStatusCode;
+            $this->_responseData['messages'] = $this->_messages;
+            $this->_responseData['data'] = $this->_data;
+        }
+
+        echo json_encode($this->_responseData); //pravi objekat key-value, kroz body
+    }
    
 }
