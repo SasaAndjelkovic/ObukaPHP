@@ -8,3 +8,6 @@ RewriteRule ^tasks/([0-9]+)$    controller/task.php?taskid=$1   [L]
 
 #http://localhost:8080.../task-api/controller/task.php?taskid=1  ne fajl, nego 
 #http://localhost:8080.../task-api/tasks/1                               rutu
+
+#RewriteRule ^tasks/students/([0-9]+)/ocena/([1-5])$    controller/task.php?studentid=$1&ocena=$2   [L]
+#http://localhost/task-api/tasks/students/15/naziv/2
