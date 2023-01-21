@@ -55,26 +55,25 @@ if (isset($_GET['taskid'])) {
         $response->addMessage($returnData);
         $response->send();
         exit;
-    // } elseif ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-    //     //pisem kod...
-    //     $qeury = "DELETE FROM tasks WHERE id=$taskid";
-    //     $result = $conn->query($qeury);
+    } elseif ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+        $query = "DELETE FROM tasks WHERE id=$taskid";
+        $result = $conn->query($query);
 
-    //     $num_rows = $conn->affected_rows;
-    //     if ($num_rows === 0) {
-    //         $response = new Response();
-    //         $response->setHttpStatusCode(400);
-    //         $response->setSuccess(false);
-    //         $response->addMessage("Task not found.");
-    //         $response->send();
-    //         exit;
-    //     }
-    //     $response = new Response();
-    //     $response->setHttpStatusCode(200);
-    //     $response->setSuccess(true);
-    //     $response->addMessage("Task deleted.");
-    //     $response->send();
-    //     exit;
+        $num_rows = $conn->affected_rows;
+        if ($num_rows === 0) {
+            $response = new Response();
+            $response->setHttpStatusCode(404);
+            $response->setSuccess(false);
+            $response->addMessage("Task not found.");
+            $response->send();
+            exit;
+        }
+        $response = new Response();
+        $response->setHttpStatusCode(200);
+        $response->setSuccess(true);
+        $response->addMessage("Task deleted.");
+        $response->send();
+        exit;
     } else {
         $response = new Response();
         $response->setHttpStatusCode(405);
