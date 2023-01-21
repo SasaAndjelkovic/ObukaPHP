@@ -45,11 +45,7 @@ pozdrav1("Tamara");
 //primer imenovanih parametara
 function pozdrav2($ime, $poz = "Zdravo", $por = "Danas je lep dan")
 {
-    /**
-     * @param ime, poz, por
-     * mogu se imenovano proslediti
-     * ime je obavezan paramater
-     */
+
     echo "$poz $ime <br>";
     echo $por;
 };

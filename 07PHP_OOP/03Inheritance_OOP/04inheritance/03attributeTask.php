@@ -19,8 +19,8 @@ class Calculator
 class Person
 {
     public string $firstNameInh;
-    public string $lastName;
-    public Calculator $calculator;
+    public string $lastNameInh;
+    public Calculator $calculatorInh;
 }
 
 class Student extends Person
@@ -30,7 +30,7 @@ class Student extends Person
 
 $student = new Student();
 $student->firstNameInh = "Sinji";
-$student->lastName = "Andjelko";
+$student->lastNameInh = "Andjelko";
 $student->indexNumber = 123;
 $student->firstNameInh = "Igor";
 echo "<br>" . $student->firstNameInh;
