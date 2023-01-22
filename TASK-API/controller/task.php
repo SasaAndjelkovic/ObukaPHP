@@ -82,4 +82,44 @@ if (isset($_GET['taskid'])) {
         $response->send();
         exit;
     }
+} elseif (empty($_GET)) {
+    //get all // get 1
+    //vracamo sve // vracamo 1
+    //petlja // nema petlje
+    //200 ok // 404
+    if ($_SERVER['REQUEST_METHOD'] === "GET") {
+        $query = "SELECT * FROM tasks";
+        $result = $conn->query($query);
+
+        $rowCount = $result->num_rows;
+        if ($rowCount === 0) {
+            $response = new Response();
+            $response->setHttpStatusCode(404);
+            $response->setSuccess(false);
+            $response->addMessage("Tasks not found!");
+            $response->send();
+            exit;
+        }
+
+        while ($row = $result->fetch_assoc()) {
+            $task = new Task($row['id'], $row['title'], $row['description'], $row['deadline'], $row['completed']);
+            $taskArray[] = $task->returnTaskArray();
+        }
+
+        $returnData = array();
+        $returnData['row_returned'] = $rowCount;
+        $returnData['tasks'] = $taskArray;
+        $response = new Response();
+        $response->setHttpStatusCode(200);
+        $response->setSuccess(true);
+        $response->setData($returnData);
+        $response->send();
+    } else {
+        $response = new Response();
+        $response->setHttpStatusCode(405);
+        $response->setSuccess(false);
+        $response->addMessage("Request method not allowed");
+        $response->send();
+        exit;
+    }  
 }
