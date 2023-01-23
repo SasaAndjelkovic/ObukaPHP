@@ -4,8 +4,10 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
-RewriteRule ^tasks/([0-9]+)$    controller/task.php?taskid=$1   [L]
-RewriteRule ^tasks controller/task.php  [L]
+RewriteRule ^tasks/([0-9]+)$                   controller/task.php?taskid=$1   [L]
+RewriteRule ^tasks                             controller/task.php  [L]
+RewriteRule ^tasks/completed$                  controller/task.php?completed=Y [L]
+RewriteRule ^tasks/incompleted$                controller/task.php?completed=N [L]
 
 #http://localhost:8080.../task-api/controller/task.php?taskid=1  ne fajl, nego 
 #http://localhost:8080.../task-api/tasks/1                               rutu

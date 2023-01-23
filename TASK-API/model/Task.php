@@ -53,7 +53,7 @@ class Task {   //pisemo sve sto smo pisali u bazi
 		return $this->_completed;
 	}
 	
-	public function setComplited($_completed) {
+	public function setCompleted($_completed) {
 		$this->_completed = $_completed;
 	}
 
