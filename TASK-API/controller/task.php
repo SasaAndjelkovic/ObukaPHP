@@ -294,7 +294,7 @@ if (isset($_GET['taskid'])) {
         exit;
     }
     if ($_SERVER['REQUEST_METHOD'] === "GET") {
-        $query = "SELECT * FROM tasks WHERE completed='$completed'";
+        $query = "SELECT * FROM tasks WHERE completed='$completed' AND userid = $db_userid";
         $result = $conn->query($query);
         $rowCount = $result->num_rows;
     //     } else {
@@ -343,7 +343,8 @@ if (isset($_GET['taskid'])) {
     //petlja // nema petlje
     //200 ok // 404
     if ($_SERVER['REQUEST_METHOD'] === "GET") {
-        $query = "SELECT * FROM tasks";
+        //vraca sve taskove usera koji je logovan
+        $query = "SELECT * FROM tasks WHERE userid = $db_userid";
         $result = $conn->query($query);
 
         $rowCount = $result->num_rows;
@@ -421,11 +422,11 @@ if (isset($_GET['taskid'])) {
         $deadline = $newTask->getDeadline();
         $completed = $newTask->getCompleted();
         if ($deadline == null)
-            $query = "INSERT INTO tasks (title, description, deadline, completed) 
-            VALUES ('$title', '$description', null,'$completed')";
+            $query = "INSERT INTO tasks (title, description, deadline, completed, userid) 
+            VALUES ('$title', '$description', null,'$completed', $db_userid)";
         else
-            $query = "INSERT INTO tasks (title, description, deadline, completed) 
-            VALUES ('$title', '$description', '$deadline','$completed')";
+            $query = "INSERT INTO tasks (title, description, deadline, completed, userid) 
+            VALUES ('$title', '$description', '$deadline','$completed', $db_userid)";
             
         $result = $conn->query($query);
 
