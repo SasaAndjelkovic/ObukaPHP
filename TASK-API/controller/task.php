@@ -14,6 +14,65 @@ $conn = DB::connectDB();
 
 // tasks/1 GET
 
+//Autorizacija
+if(!isset($_SERVER['HTTP_AUTHORIZATION']) || strlen($_SERVER['HTTP_AUTHORIZATION']) < 1){
+    $response = new Response();
+    $response->setHttpStatusCode(401);
+    $response->setSuccess(false);
+    $response->addMessage("Authorization token cannot be blank or must be set");
+    $response->send();
+    exit;
+}
+
+$accesstoken = $_SERVER['HTTP_AUTHORIZATION'];
+try {
+    $query = "SELECT userid, accessexpiry, loginattempts FROM tblusers, tblsessions WHERE tblsessions.userid = tblusers.id 
+    AND accesstoken = '$accesstoken'";
+    $result = $conn->query($query);
+
+    $rowCount = mysqli_num_rows($result);
+    if($rowCount === 0) {
+        $response = new Response();
+        $response->setHttpStatusCode(401);
+        $response->setSuccess(false);
+        $response->addMessage("Accesss token not valid");
+        $response->send();
+        exit;
+    }
+
+    $row = $result->fetch_assoc();
+    $db_userid = $row['userid'];
+    $db_accessexpiry = $row['accessexpiry'];
+    $db_loginattempts = $row['loginattempts'];
+
+    if(strtotime($db_accessexpiry) < time()){
+        $response = new Response();
+        $response->setHttpStatusCode(401);
+        $response->setSuccess(false);
+        $response->addMessage("Accesss token expired");
+        $response->send();
+        exit;
+    }
+
+    if($db_loginattempts >= 3) {
+        $response = new Response();
+        $response->setHttpStatusCode(401);
+        $response->setSuccess(false);
+        $response->addMessage("User account is currently locked out");
+        $response->send();
+        exit;
+    }
+}
+catch (Exception $ex) {
+    $response = new Response();
+    $response->setHttpStatusCode(500);
+    $response->setSuccess(false);
+    $response->addMessage("Issue during authenticition");
+    $response->send();
+    exit;
+}
+//Autorizacija zavrsena
+
 if (isset($_GET['taskid'])) {
     $taskid = $_GET['taskid'];
 

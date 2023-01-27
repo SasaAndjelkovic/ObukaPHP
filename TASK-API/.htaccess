@@ -1,14 +1,20 @@
+SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0 #$0 je kao placeholder
+
 RewriteEngine On
 
-# uslovi: ne zelimo da rivrajtujemo direktorijume i fajlove
+# uslovi: ne zelimo da rivrajtujemo direktorijume i foldere
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule ^tasks/([0-9]+)$                   controller/task.php?taskid=$1   [L]
-RewriteRule ^tasks                             controller/task.php  [L]
+RewriteRule ^tasks$                            controller/task.php  [L]
 RewriteRule ^tasks/completed$                  controller/task.php?completed=Y [L]
 RewriteRule ^tasks/incompleted$                controller/task.php?completed=N [L]
 
+RewriteRule ^users$                            controller/users.php  [L]
+RewriteRule ^sessions$                         controller/sessions.php  [L]
+
+#najpre preciznije, pa opstije
 #http://localhost:8080.../task-api/controller/task.php?taskid=1  ne fajl, nego 
 #http://localhost:8080.../task-api/tasks/1                               rutu
 
