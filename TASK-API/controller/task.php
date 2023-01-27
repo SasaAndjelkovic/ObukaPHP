@@ -13,6 +13,7 @@ $conn = DB::connectDB();
 // tasks/1 DELETE
 
 // tasks/1 GET
+
 if (isset($_GET['taskid'])) {
     $taskid = $_GET['taskid'];
 
@@ -308,6 +309,106 @@ if (isset($_GET['taskid'])) {
         $response->setSuccess(true);
         $response->setData($returnData);
         $response->send();
+    } elseif ($_SERVER['REQUEST_METHOD'] === "POST") {
+        //da li je application/JSON
+        //da li je JSON format
+        //da li sva OBAVEZNA polja popunjna
+        //pogresan tim podataka za objekat koji prosledjuje
+
+        if ($_SERVER['CONTENT_TYPE'] !== "application/json") {
+            $response = new Response();
+            $response->setHttpStatusCode(400);
+            $response->setSuccess(false);
+            $response->addMessage("Content type header not set to JSON");
+            $response->send();
+            exit;
+        }  
+        
+        $rawPostData = file_get_contents('php://input');
+        if (!$jsonData = json_decode($rawPostData)) {
+            $response = new Response();
+            $response->setHttpStatusCode(400);
+            $response->setSuccess(false);
+            $response->addMessage('Request body is not valid JSON');
+            $response->send();
+            exit;
+        }
+
+          //provera da li su setovana obavezna polja
+          if (!isset($jsonData->title) || !isset($jsonData->description) || !isset($jsonData->completed)) {
+            $response = new Response();
+            $response->setHttpStatusCode(400);
+            $response->setSuccess(false);
+            if (!isset($jsonData->title))
+                $response->addMessage('Title filed is mandatory and must be provided');
+            if (!isset($jsonData->description))
+                $response->addMessage('Description filed is mandatory and must be provided');
+            if (!isset($jsonData->completed))
+                $response->addMessage('Completed filed is mandatory and must be provided');
+            $response->send();
+            exit;
+        }
+
+        $newTask = new Task(
+            null,
+            $jsonData->title,
+            $jsonData->description,
+            !isset($jsonData->deadline) ? null : $jsonData->deadline,
+            $jsonData->completed
+        );
+
+        $title = $newTask->getTitle();
+        $description = $newTask->getDescription();
+        $deadline = $newTask->getDeadline();
+        $completed = $newTask->getCompleted();
+        if ($deadline == null)
+            $query = "INSERT INTO tasks (title, description, deadline, completed) 
+            VALUES ('$title', '$description', null,'$completed')";
+        else
+            $query = "INSERT INTO tasks (title, description, deadline, completed) 
+            VALUES ('$title', '$description', '$deadline','$completed')";
+            
+        $result = $conn->query($query);
+
+        $rowCount = $conn->affected_rows;
+        if ($rowCount === 0) {
+            $response = new Response();
+            $response->setHttpStatusCode(500);
+            $response->setSuccess(false);
+            $response->addMessage("Task not saved");
+            $response->send();
+            exit;
+        }
+
+        $lastTaskId = $conn->insert_id;  //id na osnovu rezultata
+        $query2 = "SELECT * FROM tasks WHERE id=$lastTaskId";
+        $result2 = $conn->query($query2);
+        $rowCount = $result2->num_rows;
+
+        if ($rowCount == 0) {
+            $response = new Response();
+            $response->setHttpStatusCode(500);
+            $response->setSuccess(false);
+            $response->addMessage("Failed to retive task after creation");
+            $response->send();
+            exit;
+        }
+
+        $row = $result2->fetch_assoc();
+        $task = new Task($row['id'], $row['title'], $row['description'], $row['deadline'], $row['completed']);
+
+        $returnData = array();
+        $returnData['rows_returned'] = $rowCount;
+        $returnData['task'] = $task->returnTaskArray();
+
+        $response = new Response();
+        $response->setHttpStatusCode(200);
+        $response->setSuccess(true);
+        $response->addMessage("Task created");
+        $response->setData($returnData);
+        $response->send();
+        exit;
+
     } else {
         $response = new Response();
         $response->setHttpStatusCode(405);
