@@ -1,0 +1,18 @@
+0..9
+[0-9] -> jednocifren broj
+[0-9][0-9] -> dvocifren broj
+[0-9]+ -> bilo koji broj pocev od 0 pa na vise
+[0-9]* -> bilo koji broj pocev od 0 pa na vise ili ni jedan broj
+
+[a-z] -> bilo koje JEDNO malo slovo
+[A-Z] -> bilo koje JEDNO veliko slovo
+[a-z][A-Z] -> bilo koje JEDNO malo slovo i bilo koje JEDNO veliko slovo
+[a-z]+
+[a-z]*
+[a-z A-Z] -> bilo koje JEDNO slovo sve jedno da li je malo ili veliko 
+
+1a2T
+[0-9][a-z][0-9][A-Z]*
+
+1a2TTNDANDJSANDJASNDOS
+1a2
