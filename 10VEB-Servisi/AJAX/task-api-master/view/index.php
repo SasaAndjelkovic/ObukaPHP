@@ -47,12 +47,25 @@
             </thead>
             <tbody>
                 <!-- ovde se ispisuje -->
+                <!-- <tr>
+                    <td>Naziv 1</td>
+                    <td>Opis 1</td>
+                </tr>
+                <tr>
+                    <td>Naziv 2</td>
+                    <td>Opis 2</td>
+                </tr> -->
             </tbody>
 
     </div>
     <div>
         <button id="obrisi">Obrisi</button>
     </div>
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"  
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>  
 </body>
 
 </html>
