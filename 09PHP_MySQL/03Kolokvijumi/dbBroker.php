@@ -1,7 +1,7 @@
 <?php
     // povezivanje sa bazom
     $host = "localhost";
-    $user = "root";
+    $user = "root";   //vidi u privilegije u phpmyadmin
     $pass = "";
     $database = "kolokvijumi";
 

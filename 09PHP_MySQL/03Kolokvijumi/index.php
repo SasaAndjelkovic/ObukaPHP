@@ -14,7 +14,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $korisnik = new User(1, $username, $password);
     $odgovor = User::loginUser($korisnik, $conn);
     print_r($odgovor);
-    // //vraca neki result set iz baze  -- mysqli_result Object ( [current_field] => 0 [field_count] => 3 [lengths] => [num_rows] => 0 [type] => 0 )
+    //vraca neki result set iz baze 
+    //-- mysqli_result Object ( [current_field] => 0 [field_count] => 3 [lengths] => [num_rows] => 0 [type] => 0 )
 
     if($odgovor->num_rows == 1) {
         $_SESSION['user_id'] = $korisnik->id;

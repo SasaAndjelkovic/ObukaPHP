@@ -20,7 +20,7 @@ if($podaci->num_rows == 0) {
     echo "Nema prijava u bazi!";
     exit();
 } else {
-    //nastavak u okviru html tabele
+    //nastavak u okviru html tabele, u okviru velikog diva
 
 ?>
 
@@ -58,6 +58,7 @@ if($podaci->num_rows == 0) {
     </div>
 </div>
 
+<!-- veliki div -->
 <div id="pregled" class="panel panel-success" style="margin-top: 1%;">
     
     <div class="panel-body">
@@ -71,6 +72,7 @@ if($podaci->num_rows == 0) {
             </tr>
             </thead>
             <tbody>
+                <!-- pocetak else grane -->
                 <?php while ($red = $podaci->fetch_array()):?>
                 <tr>
                     <td><?php echo $red["predmet"]?></td>
