@@ -1,25 +1,19 @@
 <?php
 
-class DStudent extends Korisnik implements Studentt{
+class Profesor extends Korisnik{
 
-    private $status = "doktorske";
-    private $indeks;
 
-    public function __construct($ime,$prezime,$email,$sifra,$jmbg,$telefon,$tip, $indeks)
+
+	protected $nizPredmeta;
+
+    public function __construct($ime,$prezime,$email,$sifra,$jmbg,$telefon,$tip)
     {
         parent::__construct($ime, $prezime, $email, $sifra, $jmbg, $telefon, $tip);
-        $this->indeks = $indeks;
+
     }
-	public function getStatus() {
-        return $this->status;
-	}
-	public function setIndeks($indeks) {
-        $this->indeks = $indeks;
-	}
-	public function getIndeks() {
-        return $this->indeks;
-	}
+
 	
+
 
 	public function getIme() {
         return $this->ime;
@@ -83,6 +77,14 @@ class DStudent extends Korisnik implements Studentt{
 
 	public function setTip($tipkorisnika) {
         $this->tip = $tipkorisnika;
+	}
+
+	public function getNizPredmeta() {
+		return $this->nizPredmeta;
+	}
+
+	public function setNizPredmeta($nizPredmeta) {
+		$this->nizPredmeta = $nizPredmeta;
 	}
 }
 

@@ -2,13 +2,13 @@
 
 class Ocena{
 
-    protected Studentt $student;
+    protected Student $student;
     protected Predmet $predmet;
     protected Profesor $profesor;
     protected int $ocena;
     protected string $datum;
 
-    public function __construct(Studentt $student,Predmet $predmet,Profesor $prof, int $ocena, string $dat)
+    public function __construct(Student $student,Predmet $predmet,Profesor $prof, int $ocena, string $dat)
     {
         $this->student = $student;
         $this->predmet = $predmet;
@@ -18,9 +18,9 @@ class Ocena{
     }
 
 	/**
-	 * @return Studentt
+	 * @return Student
 	 */
-	public function getStudent(): Studentt {
+	public function getStudent(): Student {
 		return $this->student;
 	}
 	
@@ -53,10 +53,10 @@ class Ocena{
 	}
 
 	/**
-	 * @param Studentt $student 
+	 * @param Student $student 
 	 * @return self
 	 */
-	public function setStudent(Studentt $student): self {
+	public function setStudent(Student $student): self {
 		$this->student = $student;
 		return $this;
 	}

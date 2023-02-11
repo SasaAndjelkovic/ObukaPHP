@@ -1,10 +1,26 @@
 <?php
-
 include "dbBroker.php";
 include "model/course.php";
 
-$result = Course::getAll($conn);
+if (!isset($_SESSION)) {
+    session_start();
+}
 
+if (!isset($_SESSION['user_id'])) {
+    header('Location: index.php');
+    exit();
+} elseif (isset($_GET['logout']) && !empty($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: index.php");
+}
+
+if (isset($_GET['search']))
+    $result = Course::search($_GET['search'], $conn);
+elseif (isset($_GET['sort']))
+    $result = Course::sort($_GET['sort'], $conn);
+else
+    $result = Course::getAll($conn);
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +68,7 @@ $result = Course::getAll($conn);
             <p style="color: rgba(255,255,255,.5)">Search by a keyword: </p>
             <form action="?search" method="get">
                 <input type="text" name='search' class="forma1" placeholder="Search courses">
-                    
+
                 <button id="btn-pretraga" class="btn btn-warning btn-block">
                     <i class="glyphicon glyphicon-search"></i> Search
                 </button>
@@ -94,7 +110,7 @@ $result = Course::getAll($conn);
                             </td>
                             <td>
                                 <label class="custom-radio-btn">
-                                    <form action="#" method="post">
+                                    <form action="handler/delete.php" method="post">
                                         <input type="hidden" name="id" value=<?php echo $red["id"] ?>>
                                         <button id="btn-obrisi" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Obriši
                                         </button>
@@ -109,7 +125,22 @@ $result = Course::getAll($conn);
             </table>
             <div class="row" style="padding: 1%">
                 <div>
-                    Prosek svih kurseva: <?php echo Course::average($conn);?>
+                    <!-- if(uslov) {_____} else {______} -->
+                    <!-- (uslov) ? _____ : ______   ternarni operator-->
+                    <!-- ($_GET['search']) ? $_GET['search'] : "" -->
+                    <!-- 
+                        if($_GET['search']){ $_GET['search']}
+                        else {""}
+                     -->
+
+                    Prosek svih kurseva:
+                    <?php echo Course::average(isset($_GET['search']) ? $_GET['search'] : '', $conn) ?>
+                    <?php
+                    // if (isset($_GET['search']))
+                    //     echo Course::average(($_GET['search']), $conn);
+                    // else
+                    //     echo Course::average('', $conn);
+                    ?>
                 </div>
                 <div class="col-md-12" style="text-align: right">
                     <button id="btn-izmeni" class="btn btn-warning" data-toggle="modal" data-target="#izmeniModal"><i class="glyphicon glyphicon-pencil"></i> Izmeni
@@ -130,6 +161,8 @@ $result = Course::getAll($conn);
                 </div>
                 <div class="modal-body">
                     <div class="container course-form" style="width:100%">
+                        <!-- kada se submit-uje forma prebaciti se na handler/add.php
+                    i u add php proveriti da li su sve vrednosti setovane. Ako su setovane, sacuvati u bazi. Cuvanje u bazi odraditi u klasi course pod metodom add(...)-->
                         <form action="handler/add.php" method="post" id="dodajForm">
                             <h3 style="color: black">Add course</h3>
                             <div class="update-form-row">
@@ -175,6 +208,8 @@ $result = Course::getAll($conn);
                 </div>
                 <div class="modal-body">
                     <div class="container course-form">
+                        <!-- kada se submit-uje forma prebaciti se na handler/update.php
+                    i u update.php proveriti da li su sve vrednosti setovane. Ako su setovane, azurirati u bazi na osnovu id-ja. Azuriranje u bazi odraditi u klasi course pod metodom update(...)-->
                         <form action="handler/update.php" method="post" id="izmeniForm">
                             <h3 style="color: black">Change course</h3>
                             <div class="change-course-row">

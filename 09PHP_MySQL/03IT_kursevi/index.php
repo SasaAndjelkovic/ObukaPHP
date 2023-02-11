@@ -1,17 +1,7 @@
 <?php
 
-//1. kreirati klasu user
-//2. kreirati metodu loginUser
 require "dbBroker.php";
 require "model/user.php";
-
-//3. dbBroker.php
-//4. povezati se na bazu
-
-//5. proveriti POST i ako su u redu, tj, ako nisu prazni
-// logovati usera
-//6. sacuvati sesiju user_id
-// ako je logovanje uspesno prebaciti korisnika na stranicu home.php
 
 if (!isset($_SESSION)) {
     session_start();
@@ -19,25 +9,23 @@ if (!isset($_SESSION)) {
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
-    $password = $_POST['password'];
-    $name = $_POST['name'];
+    $password = $_POST["password"];
 
     $korisnik = new User(0, $username, $password, "Neko");
-    $response = $korisnik->loginUser($conn);
 
-    if ($response->num_rows== 1) {
+    $response = $korisnik->loginUser($conn);
+    if ($response->num_rows == 1) {
         $_SESSION['user_id'] = $response->fetch_assoc()['id'];
         $korisnik->id = $response->fetch_assoc()['id'];
         $korisnik->name = $response->fetch_assoc()['name'];
         header("Location: home.php");
-        exit();
     } else
-        echo "User ne postoji!";
-
+        exit();
 }
 
-?>
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

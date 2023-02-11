@@ -1,8 +1,8 @@
 <?php
 
-class DStudent extends Korisnik implements Studentt{
+class OStudent extends Korisnik implements Student{
 
-    private $status = "doktorske";
+    private $status = "osnovne";
     private $indeks;
 
     public function __construct($ime,$prezime,$email,$sifra,$jmbg,$telefon,$tip, $indeks)

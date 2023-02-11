@@ -2,12 +2,24 @@
 
 class Kontroler{
 
+    public static function login($email, $password, mysqli $conn) {
+        $query = "SELECT * FROM administratori WHERE email='$email' AND sifra='$password';";
+        //return $conn->query($query);
+        $result = $conn->query($query);
+        if ($result->num_rows > 0) {
+            return $result->fetch_object();
+        } else {
+            echo "Korisnik ne postoji";
+            return null;
+        }
+    }
+
     public static function ulogujKorisnika(Korisnik $korisnik){
         echo "<br>Ulogovan korisnik: " . $korisnik->getIme()." ".$korisnik->getPrezime();
 
     }
 
-    public static function prikaziStudente(Student ...$listastudenata){
+    public static function prikaziStudente(Studentt ...$listastudenata){
         foreach($listastudenata as $st):
             echo "Status studenta: ".$st->getStatus();
         endforeach;

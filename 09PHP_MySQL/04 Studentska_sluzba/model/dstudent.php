@@ -1,6 +1,6 @@
 <?php
 
-class DStudent extends Korisnik implements Studentt{
+class DStudent extends Korisnik implements Student{
 
     private $status = "doktorske";
     private $indeks;

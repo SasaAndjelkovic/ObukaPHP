@@ -9,20 +9,21 @@
 include "../loaddata.php";
 
 
-if(isset($_SESSION["logovani_korisnik"])){
+
+if (isset($_SESSION["logovani_korisnik"])) {
     header("Location:../");
 } else {
-    //2. proveravamo da li su input polja popunjena
     if (isset($_POST["login"])) {
         if ($_POST["email"] == "" || $_POST["sifra"] == "") {
             echo "Morate uneti email i sifru";
         } else {
-           //3. pozivamo staticku metodu iz Kontroler koja se zove login
-           $_SESSION['logovani_korisnik'] = Kontroler::login($_POST["email"], $_POST['sifra'], $conn);
-            header("../"); //povratna vrednost, na index
+            $_SESSION['logovani_korisnik'] = Kontroler::login($_POST["email"], $_POST["sifra"], $conn);
+            header("Location: ../");
             exit();
-        }    
+        }
     }
 }
+
+
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-class MStudent extends Korisnik implements Student{
+class MStudent extends Korisnik implements Studentt{
 
     private $status = "master";
     private $indeks;
