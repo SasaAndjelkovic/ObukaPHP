@@ -21,4 +21,8 @@ $("#dodajInstrument").submit(function(event){
             console.log("Instrument nije dodat" + response);
         }
     });
+
+    request.failed(function(jqXHR, textStatus, error){
+        console.error("Desila se greska: " + textStatus, error);
+    })
 });
