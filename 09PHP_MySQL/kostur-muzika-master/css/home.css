@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+body {
+    background-image: url("../images/backHome.png");
+    background-size: contain;  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: whitesmoke;
+}
+
+h1{
+    color: #653428    ;
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Audiowide';
+}
+.main{
+    margin-top: 50px;
+    background-color: whitesmoke;
+    display: grid;
+    place-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.table {
+    color: #653428;
+    border: 1px solid #653428;
+    table-layout: fixed ;
+    width: 100% ;
+}
+td {
+    border: 1px solid #653428;
+    width: 40% ;
+    text-align: center;
+}
+th {
+    border: 1px solid #653428;
+    text-align: center;
+}
+.radio {
+    accent-color: #653428;
+}
+
+.buttons{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+/* CSS */
+.dugme {
+  align-self: center;
+  background-color: whitesmoke;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px !important;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 75px;
+  width: 175px;
+}
+
+.dugme:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.dugme:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+.pretraga {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unos {
+    margin: 0;
+    top: 50%;
+}
+

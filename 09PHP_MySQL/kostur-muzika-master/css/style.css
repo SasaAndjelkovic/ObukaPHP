@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+* {
+    font-family: 'Lato';
+}
+
+body {
+    background-image: url("../images/hands-holding-music-instruments.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  
+}
+
+h1 {
+    color: #653428    ;
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Audiowide';
+}
+img{
+    opacity:100;
+    width: 200px;
+}
+
+.login-form {
+   
+    background-color: rgba(255, 255, 255, 0.562);
+    display: block;
+    margin-top: 0em;
+    margin-left: 200px;
+    margin-right: 200px;
+    border: 5px solid black;
+    border-radius: 25px;
+    
+}
+
+.login-form:hover {
+    
+    background-color: rgba(175, 141, 141, 0.362);
+    display: block;
+    margin-top: 0em;
+    border: 5px solid #653428;
+    color: black;
+}
+
+
+input[type=text], input[type=password] {
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    display: flex;
+    border: 1px solid #653428;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+
+
+.btn {
+    background-color: gray;
+    color: #653428;
+    padding: 14px 20px;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #653428;
+    display:grid;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+
+.btn:hover {
+    opacity: 0.8;
+    border: black;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: auto;
+    display: block;
+    padding-top: 24px;
+    max-width: min-content;
+}
+
+.container {
+    padding: 16px;
+}
+
+.main-div {
+    border-radius: 2px;
+    margin: 10px auto 30px;
+    max-width: 35%;
+    padding: 50px 70px 70px 71px;
+}
