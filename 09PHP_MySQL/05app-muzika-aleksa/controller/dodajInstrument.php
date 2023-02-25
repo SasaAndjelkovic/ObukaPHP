@@ -7,8 +7,10 @@ if(isset($_POST['instrument'])){
     $status = Instrument::add($_POST['instrument'], $conn);
     if($status){
         echo 'Success';
-    } else {
+    } else{
         echo $status;
-        echo 'Failed';
+        echo "Failed";
     }
 }
+
+?>

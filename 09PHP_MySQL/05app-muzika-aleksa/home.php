@@ -1,8 +1,15 @@
 <?php
 
-# require "dbBroker.php";
-# require "model/muzicar.php";
-# require "model/instrument.php";
+require "dbBroker.php";
+require "model/muzicar.php";
+require "model/instrument.php";
+
+$result = Muzicar::getAll($conn);
+
+if(!$result){
+    echo "Greska kod upita";
+    exit();
+}
 
 ?>
 
@@ -22,6 +29,8 @@
 <body>
 
     <h1>♫Ploča Bend♫</h1>
+
+    <!-- Dugmici za operacije -->
     <div class="buttons">
         <div>
             <button class="dugme" id="btnDodaj" role="button" data-toggle="modal" data-target="#myModal">Dodaj muzicara</button>
@@ -36,6 +45,8 @@
             <button class="dugme" id="btnDodajInstrument" role="button" data-toggle="modal" data-target="#modalInstrument">Dodaj instrument</button>
         </div>
     </div>
+
+    <!-- Tabela sa muzicarima -->
     <div class="main">
         <table class="table" id="tabela">
             <thead>
@@ -48,22 +59,38 @@
                 </tr>
             </thead>
             <tbody>
-                
+                <?php
+                if($result->num_rows == 0){
+                    ?>
+                    <h3>Trenutno nema muzicara</h3>
+                    <?php
+                }else{
+                    while($red = $result->fetch_array()){
+       
+                ?>
                     <tr>
-                        <td>Id</td>
-                        <td>Ime</td>
-                        <td>Prezime</td>
-                        <td>Instrument</td>
+                        <td><?php echo $red['id'] ?></td>
+                        <td><?php echo $red['ime'] ?></td>
+                        <td><?php echo $red['prezime'] ?></td>
+                        <td>
+                            <?php
+                            $instrument = Instrument::getById($red['instrument_id'], $conn);
+                            echo $instrument;
+                            ?>
+                        </td>
                         <td class="celija">
                             <label class="radio-btn">
                                 <!-- dodati id muzicara -->
-                                <input type="radio" class="radio" name="checked-donut" value="1">
+                                <input type="radio" class="radio" name="checked-donut" value=<?php echo $red['id'] ?> >
                                 <span class="checkmark"></span>
                             </label>
                         </td>
 
                     </tr>
-                
+                <?php
+                    }
+                }
+                ?>
             </tbody>
         </table>
     </div>
@@ -149,6 +176,7 @@
         </div>
     </div>
 
+    <!-- FORMA ZA AZURIRANJE -->
     <div class="modal fade" id="izmeniModal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content" style="border: 4px solid #653428;">
@@ -165,13 +193,13 @@
                                         <input id="id" type="text" name="id" class="form-control" placeholder="ID muzicara *" value="" readonly />
                                     </div>
                                     <div class="form-group">
-                                        <input type="ime" style="border: 1px solid #653428" name="ime" class="form-control" placeholder="Ime *" value="" />
+                                        <input id="ime" type="ime" style="border: 1px solid #653428" name="ime" class="form-control" placeholder="Ime *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="prezime" style="border: 1px solid #653428" name="prezime" class="form-control" placeholder="Prezime *" value="" />
+                                        <input id="prezime" type="prezime" style="border: 1px solid #653428" name="prezime" class="form-control" placeholder="Prezime *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="instrument" style="border: 1px solid #653428" name="instrument" class="form-control" placeholder="Instrument *" value="" />
+                                        <input id="instrument" type="instrument" style="border: 1px solid #653428" name="instrument" class="form-control" placeholder="Instrument *" value="" />
                                     </div>
                                     <div class="form-group">
                                         <button id="btnIzmeni" type="submit" class="btn btn-success btn-block" style="background-color: #653428; border: 1px solid black"><i class="glyphicon glyphicon-plus"></i>Izmeni muzicara
@@ -195,6 +223,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- <script src="js/drugi.js"></script> -->
 
         
     </script>

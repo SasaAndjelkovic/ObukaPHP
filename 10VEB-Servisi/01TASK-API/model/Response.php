@@ -37,8 +37,9 @@ class Response {
             header('Cashe-control: no-cashe, no-store'); //svaki put kada se pozove ide ka serveru (API nesto)
         }
 
-        if(($this->_success !== false && $this->_success !== true) || !is_numeric($this->_httpStatusCode)) {
-            http_response_code(500); //server greska, status... head deo
+        if(($this->_success !== false && $this->_success !== true) || !is_numeric($this->_httpStatusCode)) { //status kod mora biti broj
+            http_response_code(500); //setovanje koda, server greska, status... head deo
+            //body
             $this->_responseData['statusCode'] = 500;
             $this->_responseData['success'] = false;
             $this->_messages = array();
@@ -52,7 +53,7 @@ class Response {
             $this->_responseData['data'] = $this->_data;
         }
 
-        echo json_encode($this->_responseData); //pravi objekat key-value, kroz body
+        echo json_encode($this->_responseData); //pravi json objekat key-value, kroz body
     }
    
 }
